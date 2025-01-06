@@ -86,5 +86,11 @@ function generateTable() {
 populateRackOptions();
 rackTypeSelect.addEventListener("change", generateTable);
 quantityInput.addEventListener("input", generateTable);
-printBtn.addEventListener("click", () => window.print());
 
+printBtn.addEventListener('click', () => {
+  printBtn.style.display = 'none';
+  window.print();
+  setTimeout(() => {
+    printBtn.style.display = '';
+  }, 100); // Restore button after printing
+});
