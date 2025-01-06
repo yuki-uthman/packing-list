@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #000;
+}
+
+.flex-row {
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+
+.flex-row:last-child {
+  border-bottom: none;
+}
+
+.flex-cell {
+  padding: 8px;
+  border-right: 1px solid #000;
+}
+
+.flex-cell:last-child {
+  border-right: none;
+}
+
+.parts {
+  flex: 3;
+}
+
+.quantity {
+  flex: 1;
+  text-align: center;
+}
+
+.staff {
+  flex: 1;
+  text-align: center;
+}
+
+.header {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+@media print {
+  /* Hide all elements except the table container */
+  h1, label, select, input, button, #print-btn {
+    display: none;
+  }
+
+  #table-container {
+    display: block;
+  }
+
+  .flex-table {
+    display: flex;
+    border: 1px solid #000; /* Ensure table border is visible */
+  }
+
+  .flex-row {
+    border-bottom: 1px solid #000;
+  }
+
+  .flex-cell {
+    border-right: 1px solid #000;
+    padding: 8px;
+  }
+
+  .flex-cell:last-child {
+    border-right: none;
+  }
+}
+
