@@ -10,22 +10,31 @@
   <div class="max-w-xl mx-auto bg-white shadow-md rounded-lg p-6">
     <h1 class="text-2xl font-bold mb-4 text-center">Packing List</h1>
 
-    <!-- Row for Rack Name and Quantity -->
-    <div class="flex gap-4 mb-4">
-      <div class="flex-auto">
-        <select id="rack-type" class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
-          <option value="">-- Select Rack --</option>
-        </select>
-      </div>
-      <div class="flex-none w-1/6">
-        <input
-          type="number"
-          id="quantity"
-          min="1"
-          value="1"
-          class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
-        />
-      </div>
+    <!-- Rack Code Dropdown -->
+    <div class="mb-4 flex items-center gap-4">
+      <select id="rack-code" class="border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2 w-auto">
+        <option value="">Rack</option>
+      </select>
+    </div>
+
+    <!-- Rack Type Dropdown -->
+    <div class="mb-4 flex items-center gap-4">
+        <div class="mb-4 w-1/2">
+          <select id="rack-type" class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" disabled>
+            <option value="">Type</option>
+          </select>
+        </div>
+
+        <!-- Quantity Input -->
+        <div class="mb-4 w-1/2">
+          <input
+            type="number"
+            id="quantity"
+            min="1"
+            value="1"
+            class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+          />
+        </div>
     </div>
 
     <!-- Table Container -->
