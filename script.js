@@ -1,5 +1,4 @@
 // rack parts with unique ID
-
 const rackCode = {
     1: "2C",
     2: "8",
@@ -56,7 +55,6 @@ const rackCompositions = {
 
 // DOM elements
 const rackCodeSelect = document.getElementById("rack-code");
-const rackTypeSelect = document.getElementById("rack-type");
 const quantityInput = document.getElementById("quantity");
 const tableContainer = document.getElementById("table-container");
 const printBtn = document.getElementById("print-btn");
@@ -72,18 +70,35 @@ function populateRackCodeOptions() {
     });
 }
 
-// Populate Rack Type Options
-function populateRackTypeOptions() {
-    rackTypeSelect.innerHTML = '<option value="">Type</option>'; // Add default option
-    Object.keys(rackType).forEach((id) => {
-        const option = document.createElement("option");
-        option.value = id; // Assign the ID as the value
-        option.textContent = rackType[id].name; // Use the name property for display
-        rackTypeSelect.appendChild(option);
-    });
+// Function to display all rack types in a table with quantity input fields
+function displayRackTypesTable() {
+    const rackTypesTableHTML = `
+        <table class="w-full border-collapse border border-gray-300 text-sm mt-4">
+            <tbody>
+                ${Object.keys(rackType)
+                    .map(
+                        (id) => `
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-1">${rackType[id].name}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center">
+                                <input
+                                    type="number"
+                                    id="quantity-${id}"
+                                    min="0"
+                                    value="0"
+                                    class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+                                />
+                            </td>
+                        </tr>
+                    `
+                    )
+                    .join("")}
+            </tbody>
+        </table>
+    `;
 
-    // Enable dropdown after population
-    rackTypeSelect.disabled = false;
+    const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+    rackTypeTableContainer.innerHTML = rackTypesTableHTML;
 }
 
 // Generate table based on selected rack type and quantity
@@ -144,9 +159,16 @@ function generateTable() {
 
 // Event Listeners
 populateRackCodeOptions();
-rackCodeSelect.addEventListener("change", populateRackTypeOptions);
-rackTypeSelect.addEventListener("change", generateTable);
-quantityInput.addEventListener("input", generateTable);
+
+rackCodeSelect.addEventListener("change", () => {
+    const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+
+    if (rackCodeSelect.value) {
+        displayRackTypesTable();
+    } else {
+        rackTypeTableContainer.innerHTML = "<p class='text-red-500'>Please select a valid rack code to display types.</p>";
+    }
+});
 
 printBtn.addEventListener('click', () => {
   printBtn.style.display = 'none';
