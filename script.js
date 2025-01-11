@@ -23,8 +23,8 @@ const rackData = {
     { part: "SHELF CLIP", color: "WHITE", quantity: 18 },
   ],
   "2C End Side 5ft WHITE": [
-    { part: "NET 1500mm", color: "WHITE", quantity: 1 },
-    { part: "STAND 1500mm", color: "WHITE", quantity: 2 },
+    { part: "NET End Rack", color: "WHITE", quantity: 1 },
+    { part: "STAND 1800mm", color: "WHITE", quantity: 2 },
     { part: "FATHI TOP", color: "WHITE", quantity: 1 },
     { part: "FATHI BOTTOM", color: "WHITE", quantity: 1 },
     { part: "BRACKET FRONT", color: "WHITE", quantity: 1 },
@@ -56,7 +56,7 @@ const rackData = {
     { part: "SHELF CLIP", color: "BLACK", quantity: 18 },
   ],
   "2C End Side 5ft BLACK": [
-    { part: "NET 1500mm", color: "BLACK", quantity: 1 },
+    { part: "NET END RACK", color: "BLACK", quantity: 1 },
     { part: "STAND 1500mm", color: "BLACK", quantity: 2 },
     { part: "FATHI TOP", color: "BLACK", quantity: 1 },
     { part: "FATHI BOTTOM", color: "BLACK", quantity: 1 },
