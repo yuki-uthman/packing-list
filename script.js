@@ -114,7 +114,7 @@ function displayRackTypesTable() {
                                     id="quantity-${id}"
                                     min="0"
                                     value="0"
-                                    class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+                                    class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-1"
                                 />
                             </td>
                         </tr>
@@ -168,7 +168,6 @@ function generatePartsTable() {
 
     // Generate the table HTML
     if (tableData.length === 0) {
-        tableContainer.innerHTML = "<p class='text-red-500'>Please enter valid quantities for the rack types.</p>";
         return;
     }
 
@@ -176,9 +175,10 @@ function generatePartsTable() {
         <table class="w-full border-collapse border border-gray-300 text-sm mt-4">
             <thead>
                 <tr class="bg-gray-200">
-                    <th class="border border-gray-300 px-4 py-2 text-left">Part Name</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center">Color</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center">Quantity</th>
+                    <th class="border border-gray-300 px-4 py-1 text-left">Part Name</th>
+                    <th class="border border-gray-300 px-4 py-1 text-center">Color</th>
+                    <th class="border border-gray-300 px-4 py-1 text-center">PCS</th>
+                    <th class="border border-gray-300 px-4 py-1 text-center">Staff</th>
                 </tr>
             </thead>
             <tbody>
@@ -186,9 +186,10 @@ function generatePartsTable() {
                     .map(
                         (part) => `
                         <tr>
-                            <td class="border border-gray-300 px-4 py-2">${part.name}</td>
-                            <td class="border border-gray-300 px-4 py-2 text-center">${part.color}</td>
-                            <td class="border border-gray-300 px-4 py-2 text-center">${part.quantity}</td>
+                            <td class="border border-gray-300 px-4 py-1">${part.name}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center">${part.color}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center">${part.quantity}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center"></td>
                         </tr>`
                     )
                     .join("")}
@@ -203,13 +204,9 @@ function generatePartsTable() {
 populateRackCodeOptions();
 
 rackCodeSelect.addEventListener("change", () => {
-    const rackTypeTableContainer = document.getElementById("rack-type-table-container");
-
     if (rackCodeSelect.value) {
         displayRackTypesTable();
         generatePartsTable(); // Update parts table on rack code change
-    } else {
-        rackTypeTableContainer.innerHTML = "<p class='text-red-500'>Please select a valid rack code to display types.</p>";
     }
 });
 
