@@ -1,213 +1,226 @@
-// Define rack data
-const rackData = {
-  "2C Single Side 6.5ft WHITE": [
-    { part: "NET 2000mm", color: "WHITE", quantity: 1 },
-    { part: "STAND 2000mm", color: "WHITE", quantity: 2 },
-    { part: "FATHI TOP", color: "WHITE", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "WHITE", quantity: 1 },
-    { part: "BRACKET FRONT", color: "WHITE", quantity: 1 },
-    { part: "BRACKET SIDE", color: "WHITE", quantity: 2 },
-    { part: "SHELF TOP", color: "WHITE", quantity: 5 },
-    { part: "SHELF BOTTOM", color: "WHITE", quantity: 1 },
-    { part: "SHELF CLIP", color: "WHITE", quantity: 10 },
-  ],
-  "2C Double Side 6ft WHITE": [
-    { part: "NET 1800mm", color: "WHITE", quantity: 1 },
-    { part: "STAND 1800mm", color: "WHITE", quantity: 2 },
-    { part: "FATHI TOP", color: "WHITE", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "WHITE", quantity: 1 },
-    { part: "BRACKET FRONT", color: "WHITE", quantity: 2 },
-    { part: "BRACKET SIDE", color: "WHITE", quantity: 4 },
-    { part: "SHELF TOP", color: "WHITE", quantity: 8 },
-    { part: "SHELF BOTTOM", color: "WHITE", quantity: 2 },
-    { part: "SHELF CLIP", color: "WHITE", quantity: 18 },
-  ],
-  "2C End Side 5ft WHITE": [
-    { part: "NET End Rack", color: "WHITE", quantity: 1 },
-    { part: "STAND 1800mm", color: "WHITE", quantity: 2 },
-    { part: "FATHI TOP", color: "WHITE", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "WHITE", quantity: 1 },
-    { part: "BRACKET FRONT", color: "WHITE", quantity: 1 },
-    { part: "BRACKET SIDE", color: "WHITE", quantity: 2 },
-    { part: "SHELF TOP", color: "WHITE", quantity: 4 },
-    { part: "SHELF BOTTOM", color: "WHITE", quantity: 1 },
-    { part: "SHELF CLIP", color: "WHITE", quantity: 8 },
-  ],
-  "2C Single Side 6.5ft BLACK": [
-    { part: "NET 2000mm", color: "BLACK", quantity: 1 },
-    { part: "STAND 2000mm", color: "BLACK", quantity: 2 },
-    { part: "FATHI TOP", color: "BLACK", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "BRACKET FRONT", color: "BLACK", quantity: 1 },
-    { part: "BRACKET SIDE", color: "BLACK", quantity: 2 },
-    { part: "SHELF TOP", color: "BLACK", quantity: 5 },
-    { part: "SHELF BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 10 },
-  ],
-  "2C Double Side 6ft BLACK": [
-    { part: "NET 1800mm", color: "BLACK", quantity: 1 },
-    { part: "STAND 1800mm", color: "BLACK", quantity: 2 },
-    { part: "FATHI TOP", color: "BLACK", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "BRACKET FRONT", color: "BLACK", quantity: 2 },
-    { part: "BRACKET SIDE", color: "BLACK", quantity: 4 },
-    { part: "SHELF TOP", color: "BLACK", quantity: 8 },
-    { part: "SHELF BOTTOM", color: "BLACK", quantity: 2 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 18 },
-  ],
-  "2C End Side 5ft BLACK": [
-    { part: "NET END RACK", color: "BLACK", quantity: 1 },
-    { part: "STAND 1500mm", color: "BLACK", quantity: 2 },
-    { part: "FATHI TOP", color: "BLACK", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "BRACKET FRONT", color: "BLACK", quantity: 1 },
-    { part: "BRACKET SIDE", color: "BLACK", quantity: 2 },
-    { part: "SHELF TOP", color: "BLACK", quantity: 4 },
-    { part: "SHELF BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 8 },
-  ],
-  "17 Single Side 6ft White": [
-    { part: "BACK BOARD 2000mm", color: "WHITE", quantity: 1 },
-    { part: "STAND 1900mm", color: "WHITE", quantity: 2 },
-    { part: "FATHI TOP", color: "WHITE", quantity: 1 },
-    { part: "BRACKET FRONT", color: "WHITE", quantity: 1 },
-    { part: "SHELF TOP", color: "WHITE", quantity: 5 },
-    { part: "SHELF BOTTOM", color: "WHITE", quantity: 1 },
-    { part: "SHELF CLIP", color: "WHITE", quantity: 12 },
-  ],
-  "17 Double Side 6ft White": [
-    { part: "BACK BOARD 2000mm", color: "WHITE", quantity: 1 },
-    { part: "STAND 1800mm", color: "WHITE", quantity: 2 },
-    { part: "FATHI TOP", color: "WHITE", quantity: 1 },
-    { part: "BRACKET FRONT", color: "WHITE", quantity: 2 },
-    { part: "SHELF TOP", color: "WHITE", quantity: 8 },
-    { part: "SHELF BOTTOM", color: "WHITE", quantity: 2 },
-    { part: "SHELF CLIP", color: "WHITE", quantity: 20 },
-  ],
-  "37 Single Side 6.5ft": [
-    { part: "BACK BOARD 1800mm", color: "WOOD", quantity: 1 },
-    { part: "FRAME 1800mm", color: "BLACK", quantity: 2 },
-    { part: "FATHI TOP", color: "BLACK", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "SHELF 920x300mm", color: "WOOD", quantity: 5 },
-    { part: "SHELF BORDER TOP", color: "WOOD", quantity: 4 },
-    { part: "SHELF BORDER BOTTOM", color: "WOOD", quantity: 1 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 10 },
-    { part: "SHELF BAR", color: "BLACK", quantity: 5 },
-  ],
-  "37 Double Side 5ft": [
-    { part: "BACK BOARD 1500mm", color: "WOOD", quantity: 1 },
-    { part: "FRAME 1500mm", color: "WOOD", quantity: 2 },
-    { part: "FATHI TOP", color: "BLACK", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "SHELF", color: "WOOD", quantity: 10 },
-    { part: "SHELF BORDER TOP", color: "WOOD", quantity: 6 },
-    { part: "SHELF BORDER BOTTOM", color: "WOOD", quantity: 2 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 16 },
-    { part: "SHELF BAR", color: "BLACK", quantity: 8 },
-  ],
-  "37 End Side 5ft": [
-    { part: "SIDE BOARD", color: "BLACK", quantity: 2 },
-    { part: "FRAME 1500mm", color: "BLACK", quantity: 2 },
-    { part: "FATHI TOP", color: "BLACK", quantity: 1 },
-    { part: "FATHI BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "SHELF", color: "WOOD", quantity: 4 },
-    { part: "SHELF BORDER TOP", color: "WOOD", quantity: 3 },
-    { part: "SHELF BORDER BOTTOM", color: "WOOD", quantity: 1 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 8 },
-    { part: "SHELF BAR", color: "BLACK", quantity: 4 },
-  ],
-  "51 WAREHOUSE RACK": [
-    { part: "FRAME", color: "WHITE", quantity: 2 },
-    { part: "BEAM", color: "WHITE", quantity: 10 },
-    { part: "SHELF", color: "WHITE", quantity: 10 },
-  ],
-  "52 WAREHOUSE RACK": [
-    { part: "FRAME", color: "BLUE", quantity: 2 },
-    { part: "BEAM", color: "BLUE", quantity: 10 },
-    { part: "SHELF", color: "BLUE", quantity: 10 },
-  ],
-  "33 WAREHOUSE RACK 1800mm": [
-    { part: "FRAME", color: "BLACK", quantity: 2 },
-    { part: "BEAM", color: "BLACK", quantity: 10 },
-    { part: "SHELF", color: "BLACK", quantity: 10 },
-  ],
-  "33 WAREHOUSE RACK 2000mm": [
-    { part: "FRAME", color: "BLACK", quantity: 2 },
-    { part: "BEAM", color: "BLACK", quantity: 10 },
-    { part: "SHELF", color: "BLACK", quantity: 10 },
-  ],
-};
+// rack parts with unique ID
+const rackCode = {
+    1: "2C",
+    2: "8",
+    3: "17",
+    4: "37 MINISO RACK",
+}
+
+const rackParts = {
+    1: { code: 37, name: "BACK BOARD SINGLE RACK 6.5ft" },
+    2: { code: 37, name: "BACK BOARD MIDDLE RACK" },
+    3: { code: 37, name: "SIDE BOARD END RACK" },
+    4: { code: 37, name: "FRAME SINGLE RACK" },
+    5: { code: 37, name: "FRAME MIDDLE RACK" },
+    6: { code: 37, name: "FRAME END RACK" },
+    7: { code: 37, name: "FATHI TOP" },
+    8: { code: 37, name: "FATHI BOTTOM" },
+    9: { code: 37, name: "SHELF TOP" },
+    10: { code: 37, name: "SHELF BOTTOM" },
+    11: { code: 37, name: "SHELF CLIP" },
+    12: { code: 37, name: "SHELF BAR LONG" },
+    13: { code: 37, name: "SHELF BAR SHORT" },
+    14: { code: 37, name: "SHELF TOP SHORT" },
+    15: { code: 37, name: "SHELF BOTTOM SHORT" },
+}
+
+const rackType = {
+    1: { code: 37, name: "SINGLE RACK 6.5ft" },
+    2: { code: 37, name: "MIDDLE RACK" },
+    3: { code: 37, name: "END RACK" },
+}
+
+const colors = {
+    1: "WHITE",
+    2: "BLACK",
+    3: "WOOD",
+    4: "BLACK",
+}
+
+const rackCompositions = {
+    1: {
+        rackTypeID: 1,
+        parts:
+            [
+                { partID: 1, quantity: 1, colorID: 3 },
+                { partID: 4, quantity: 2, colorID: 2 },
+                { partID: 7, quantity: 1, colorID: 2 },
+                { partID: 8, quantity: 1, colorID: 2 },
+                { partID: 9, quantity: 4, colorID: 3 },
+                { partID: 10, quantity: 1, colorID: 3 },
+                { partID: 11, quantity: 10, colorID: 2 },
+                { partID: 12, quantity: 5, colorID: 2 },
+            ],
+    },
+    2: {
+        rackTypeID: 2,
+        parts:
+            [
+                { partID: 2, quantity: 1, colorID: 3 },
+                { partID: 5, quantity: 2, colorID: 2 },
+                { partID: 7, quantity: 1, colorID: 2 },
+                { partID: 8, quantity: 1, colorID: 2 },
+                { partID: 9, quantity: 6, colorID: 3 },
+                { partID: 10, quantity: 2, colorID: 3 },
+                { partID: 11, quantity: 16, colorID: 2 },
+                { partID: 12, quantity: 8, colorID: 2 },
+            ],
+    },
+    3: {
+        rackTypeID: 3,
+        parts:
+            [
+                { partID: 3, quantity: 2, colorID: 3 },
+                { partID: 6, quantity: 2, colorID: 2 },
+                { partID: 11, quantity: 8, colorID: 2 },
+                { partID: 13, quantity: 4, colorID: 2 },
+                { partID: 14, quantity: 3, colorID: 2 },
+                { partID: 15, quantity: 1, colorID: 2 },
+            ],
+    },
+
+}
 
 // DOM elements
-const rackTypeSelect = document.getElementById("rack-type");
+const rackCodeSelect = document.getElementById("rack-code");
 const quantityInput = document.getElementById("quantity");
 const tableContainer = document.getElementById("table-container");
 const printBtn = document.getElementById("print-btn");
 
-// Populate rack options dynamically
-function populateRackOptions() {
-  Object.keys(rackData).forEach((rack) => {
-    const option = document.createElement("option");
-    option.value = rack;
-    option.textContent = rack;
-    rackTypeSelect.appendChild(option);
-  });
+// Populate rack code options
+function populateRackCodeOptions() {
+    rackCodeSelect.innerHTML = '<option value="">Rack</option>';
+    Object.keys(rackCode).forEach((id) => {
+        const option = document.createElement("option");
+        option.value = id;
+        option.textContent = rackCode[id];
+        rackCodeSelect.appendChild(option);
+    });
 }
 
-function generateTable() {
-  const selectedRack = rackTypeSelect.value;
-  const quantity = parseInt(quantityInput.value, 10);
+// Function to display all rack types in a table with quantity input fields
+function displayRackTypesTable() {
+    const rackTypesTableHTML = `
+        <table class="w-full border-collapse border border-gray-300 text-sm mt-4">
+            <tbody>
+                ${Object.keys(rackType)
+                    .map(
+                        (id) => `
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-1">${rackType[id].name}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center">
+                                <input
+                                    type="number"
+                                    id="quantity-${id}"
+                                    min="0"
+                                    value="0"
+                                    class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-1"
+                                />
+                            </td>
+                        </tr>
+                    `
+                    )
+                    .join("")}
+            </tbody>
+        </table>
+    `;
 
-  // If no rack is selected or quantity is invalid, show a message
-  if (!selectedRack || quantity < 1) {
-    tableContainer.innerHTML = "<p class='text-red-500'>Please select a rack and enter a valid quantity.</p>";
-    return;
-  }
-
-  // Get the parts for the selected rack
-  const parts = rackData[selectedRack];
-
-  // Generate the table
-  const tableHTML = `
-    <table class="w-full border-collapse border border-gray-300 text-sm mt-4">
-      <thead>
-        <tr class="bg-gray-200">
-          <th class="border border-gray-300 px-4 py-2 text-left" style="width: 62.5%;">Part Name</th>
-          <th class="border border-gray-300 px-4 py-2 text-center" style="width: 12.5%;">Color</th>
-          <th class="border border-gray-300 px-4 py-2 text-center" style="width: 12.5%;">Quantity</th>
-          <th class="border border-gray-300 px-4 py-2 text-center" style="width: 12.5%;">Staff</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${parts
-          .map(
-            (part) => `
-          <tr>
-            <td class="border border-gray-300 px-4 py-2">${part.part}</td>
-            <td class="border border-gray-300 px-4 py-2 text-center">${part.color}</td>
-            <td class="border border-gray-300 px-4 py-2 text-center">${part.quantity * quantity}</td>
-            <td class="border border-gray-300 px-4 py-2 text-center"></td>
-          </tr>
-        `
-          )
-          .join("")}
-      </tbody>
-    </table>
-  `;
-
-  tableContainer.innerHTML = tableHTML;
+    const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+    rackTypeTableContainer.innerHTML = rackTypesTableHTML;
 }
 
-// Initialize the app
-populateRackOptions();
-rackTypeSelect.addEventListener("change", generateTable);
-quantityInput.addEventListener("input", generateTable);
+// Function to generate a table with parts based on entered quantities
+function generatePartsTable() {
+    const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+    const rows = Array.from(rackTypeTableContainer.querySelectorAll("tr"));
+    const tableData = [];
 
-printBtn.addEventListener('click', () => {
-  printBtn.style.display = 'none';
-  window.print();
-  setTimeout(() => {
-    printBtn.style.display = '';
-  }, 100); // Restore button after printing
+    rows.forEach((row) => {
+        const rackTypeID = parseInt(row.querySelector("input").id.replace("quantity-", ""), 10);
+        const quantityInput = row.querySelector("input");
+        const quantity = parseInt(quantityInput.value, 10);
+
+        // Skip rows with invalid or zero quantities
+        if (!rackTypeID || isNaN(quantity) || quantity < 1) return;
+
+        // Find the composition for the selected rack type
+        const composition = rackCompositions[rackTypeID];
+        if (!composition) return;
+
+        composition.parts.forEach((part) => {
+            const partDetails = rackParts[part.partID];
+            const color = colors[part.colorID];
+            const existingPart = tableData.find((item) => item.name === partDetails.name && item.color === color);
+
+            if (existingPart) {
+                // If part already exists, update its quantity
+                existingPart.quantity += part.quantity * quantity;
+            } else {
+                // Otherwise, add the part to the table data
+                tableData.push({
+                    name: partDetails.name,
+                    color: color,
+                    quantity: part.quantity * quantity,
+                });
+            }
+        });
+    });
+
+    // Generate the table HTML
+    if (tableData.length === 0) {
+        return;
+    }
+
+    const tableHTML = `
+        <table class="w-full border-collapse border border-gray-300 text-sm mt-4">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border border-gray-300 px-4 py-1 text-left">Part Name</th>
+                    <th class="border border-gray-300 px-4 py-1 text-center">Color</th>
+                    <th class="border border-gray-300 px-4 py-1 text-center">PCS</th>
+                    <th class="border border-gray-300 px-4 py-1 text-center">Staff</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${tableData
+                    .map(
+                        (part) => `
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-1">${part.name}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center">${part.color}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center">${part.quantity}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center"></td>
+                        </tr>`
+                    )
+                    .join("")}
+            </tbody>
+        </table>
+    `;
+
+    tableContainer.innerHTML = tableHTML;
+}
+
+// Event Listeners
+populateRackCodeOptions();
+
+rackCodeSelect.addEventListener("change", () => {
+    if (rackCodeSelect.value) {
+        displayRackTypesTable();
+        generatePartsTable(); // Update parts table on rack code change
+    }
+});
+
+// Add event listener to dynamically update the parts table whenever a quantity changes
+document.addEventListener("input", (e) => {
+    if (e.target.id.startsWith("quantity-")) {
+        generatePartsTable();
+    }
+});
+
+printBtn.addEventListener("click", () => {
+    printBtn.style.display = "none";
+    window.print();
+    setTimeout(() => {
+        printBtn.style.display = "";
+    }, 100); // Restore button after printing
 });

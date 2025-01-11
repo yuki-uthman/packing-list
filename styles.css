@@ -50,7 +50,7 @@ body {
 
 @media print {
   /* Hide all elements except the table container */
-  h1, label, select, input, button, #print-btn {
+  h1, label, button {
     display: none;
   }
 
