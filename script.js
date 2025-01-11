@@ -101,7 +101,7 @@ function populateRackCodeOptions() {
 // Function to display all rack types in a table with quantity input fields
 function displayRackTypesTable() {
     const rackTypesTableHTML = `
-        <table class="w-full border-collapse border border-gray-300 text-sm mt-4">
+        <table class="w-full border-collapse border border-gray-300 text-lg mt-4">
             <tbody>
                 ${Object.keys(rackType)
                     .map(
@@ -172,7 +172,7 @@ function generatePartsTable() {
     }
 
     const tableHTML = `
-        <table class="w-full border-collapse border border-gray-300 text-sm mt-4">
+        <table class="w-full border-collapse border border-gray-300 text-lg mt-4">
             <thead>
                 <tr class="bg-gray-200">
                     <th class="border border-gray-300 px-4 py-1 text-left">Part Name</th>
