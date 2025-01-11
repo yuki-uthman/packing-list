@@ -3,7 +3,7 @@ const rackCode = {
     1: "2C",
     2: "8",
     3: "17",
-    4: "37",
+    4: "37 MINISO RACK",
 }
 
 const rackParts = {
@@ -20,6 +20,8 @@ const rackParts = {
     11: { code: 37, name: "SHELF CLIP" },
     12: { code: 37, name: "SHELF BAR LONG" },
     13: { code: 37, name: "SHELF BAR SHORT" },
+    14: { code: 37, name: "SHELF TOP SHORT" },
+    15: { code: 37, name: "SHELF BOTTOM SHORT" },
 }
 
 const rackType = {
@@ -49,7 +51,33 @@ const rackCompositions = {
                 { partID: 11, quantity: 10, colorID: 2 },
                 { partID: 12, quantity: 5, colorID: 2 },
             ],
-    }
+    },
+    2: {
+        rackTypeID: 2,
+        parts:
+            [
+                { partID: 2, quantity: 1, colorID: 3 },
+                { partID: 5, quantity: 2, colorID: 2 },
+                { partID: 7, quantity: 1, colorID: 2 },
+                { partID: 8, quantity: 1, colorID: 2 },
+                { partID: 9, quantity: 6, colorID: 3 },
+                { partID: 10, quantity: 2, colorID: 3 },
+                { partID: 11, quantity: 16, colorID: 2 },
+                { partID: 12, quantity: 8, colorID: 2 },
+            ],
+    },
+    3: {
+        rackTypeID: 3,
+        parts:
+            [
+                { partID: 3, quantity: 2, colorID: 3 },
+                { partID: 6, quantity: 2, colorID: 2 },
+                { partID: 11, quantity: 8, colorID: 2 },
+                { partID: 13, quantity: 4, colorID: 2 },
+                { partID: 14, quantity: 3, colorID: 2 },
+                { partID: 15, quantity: 1, colorID: 2 },
+            ],
+    },
 
 }
 
