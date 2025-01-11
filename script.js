@@ -9,7 +9,7 @@ const rackData = {
     { part: "BRACKET SIDE", color: "WHITE", quantity: 2 },
     { part: "SHELF TOP", color: "WHITE", quantity: 5 },
     { part: "SHELF BOTTOM", color: "WHITE", quantity: 1 },
-    { part: "SHELF CLIP", color: "WHITE", quantity: 12 },
+    { part: "SHELF CLIP", color: "WHITE", quantity: 10 },
   ],
   "2C Double Side 6ft WHITE": [
     { part: "NET 1800mm", color: "WHITE", quantity: 1 },
@@ -20,7 +20,7 @@ const rackData = {
     { part: "BRACKET SIDE", color: "WHITE", quantity: 4 },
     { part: "SHELF TOP", color: "WHITE", quantity: 8 },
     { part: "SHELF BOTTOM", color: "WHITE", quantity: 2 },
-    { part: "SHELF CLIP", color: "WHITE", quantity: 20 },
+    { part: "SHELF CLIP", color: "WHITE", quantity: 18 },
   ],
   "2C End Side 5ft WHITE": [
     { part: "NET 1500mm", color: "WHITE", quantity: 1 },
@@ -31,7 +31,7 @@ const rackData = {
     { part: "BRACKET SIDE", color: "WHITE", quantity: 2 },
     { part: "SHELF TOP", color: "WHITE", quantity: 4 },
     { part: "SHELF BOTTOM", color: "WHITE", quantity: 1 },
-    { part: "SHELF CLIP", color: "WHITE", quantity: 10 },
+    { part: "SHELF CLIP", color: "WHITE", quantity: 8 },
   ],
   "2C Single Side 6.5ft BLACK": [
     { part: "NET 2000mm", color: "BLACK", quantity: 1 },
@@ -42,7 +42,7 @@ const rackData = {
     { part: "BRACKET SIDE", color: "BLACK", quantity: 2 },
     { part: "SHELF TOP", color: "BLACK", quantity: 5 },
     { part: "SHELF BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 12 },
+    { part: "SHELF CLIP", color: "BLACK", quantity: 10 },
   ],
   "2C Double Side 6ft BLACK": [
     { part: "NET 1800mm", color: "BLACK", quantity: 1 },
@@ -53,7 +53,7 @@ const rackData = {
     { part: "BRACKET SIDE", color: "BLACK", quantity: 4 },
     { part: "SHELF TOP", color: "BLACK", quantity: 8 },
     { part: "SHELF BOTTOM", color: "BLACK", quantity: 2 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 20 },
+    { part: "SHELF CLIP", color: "BLACK", quantity: 18 },
   ],
   "2C End Side 5ft BLACK": [
     { part: "NET 1500mm", color: "BLACK", quantity: 1 },
@@ -64,7 +64,7 @@ const rackData = {
     { part: "BRACKET SIDE", color: "BLACK", quantity: 2 },
     { part: "SHELF TOP", color: "BLACK", quantity: 4 },
     { part: "SHELF BOTTOM", color: "BLACK", quantity: 1 },
-    { part: "SHELF CLIP", color: "BLACK", quantity: 10 },
+    { part: "SHELF CLIP", color: "BLACK", quantity: 8 },
   ],
   "17 Single Side 6ft White": [
     { part: "BACK BOARD 2000mm", color: "WHITE", quantity: 1 },
