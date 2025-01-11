@@ -101,35 +101,49 @@ function displayRackTypesTable() {
     rackTypeTableContainer.innerHTML = rackTypesTableHTML;
 }
 
-// Generate table based on selected rack type and quantity
-function generateTable() {
-    const selectedRackTypeID = parseInt(rackTypeSelect.value, 10);
-    const quantity = parseInt(quantityInput.value, 10);
+// Function to generate a table with parts based on entered quantities
+function generatePartsTable() {
+    const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+    const rows = Array.from(rackTypeTableContainer.querySelectorAll("tr"));
+    const tableData = [];
 
-    if (!selectedRackTypeID || quantity < 1) {
-        tableContainer.innerHTML = "<p class='text-red-500'>Please select a rack type and enter a valid quantity.</p>";
-        return;
-    }
+    rows.forEach((row) => {
+        const rackTypeID = parseInt(row.querySelector("input").id.replace("quantity-", ""), 10);
+        const quantityInput = row.querySelector("input");
+        const quantity = parseInt(quantityInput.value, 10);
 
-    // Find the composition for the selected rack
-    const composition = rackCompositions[selectedRackTypeID];
-    if (!composition) {
-        tableContainer.innerHTML = "<p class='text-red-500'>No composition found for the selected rack type.</p>";
-        return;
-    }
+        // Skip rows with invalid or zero quantities
+        if (!rackTypeID || isNaN(quantity) || quantity < 1) return;
 
-    // Get the parts for the composition
-    const parts = composition.parts.map((part) => {
-        const partDetails = rackParts[part.partID];
-        const color = colors[part.colorID];
-        return {
-            name: partDetails.name,
-            color: color,
-            quantity: part.quantity * quantity,
-        };
+        // Find the composition for the selected rack type
+        const composition = rackCompositions[rackTypeID];
+        if (!composition) return;
+
+        composition.parts.forEach((part) => {
+            const partDetails = rackParts[part.partID];
+            const color = colors[part.colorID];
+            const existingPart = tableData.find((item) => item.name === partDetails.name && item.color === color);
+
+            if (existingPart) {
+                // If part already exists, update its quantity
+                existingPart.quantity += part.quantity * quantity;
+            } else {
+                // Otherwise, add the part to the table data
+                tableData.push({
+                    name: partDetails.name,
+                    color: color,
+                    quantity: part.quantity * quantity,
+                });
+            }
+        });
     });
 
-    // Generate the table
+    // Generate the table HTML
+    if (tableData.length === 0) {
+        tableContainer.innerHTML = "<p class='text-red-500'>Please enter valid quantities for the rack types.</p>";
+        return;
+    }
+
     const tableHTML = `
         <table class="w-full border-collapse border border-gray-300 text-sm mt-4">
             <thead>
@@ -140,7 +154,7 @@ function generateTable() {
                 </tr>
             </thead>
             <tbody>
-                ${parts
+                ${tableData
                     .map(
                         (part) => `
                         <tr>
@@ -165,15 +179,23 @@ rackCodeSelect.addEventListener("change", () => {
 
     if (rackCodeSelect.value) {
         displayRackTypesTable();
+        generatePartsTable(); // Update parts table on rack code change
     } else {
         rackTypeTableContainer.innerHTML = "<p class='text-red-500'>Please select a valid rack code to display types.</p>";
     }
 });
 
-printBtn.addEventListener('click', () => {
-  printBtn.style.display = 'none';
-  window.print();
-  setTimeout(() => {
-    printBtn.style.display = '';
-  }, 100); // Restore button after printing
+// Add event listener to dynamically update the parts table whenever a quantity changes
+document.addEventListener("input", (e) => {
+    if (e.target.id.startsWith("quantity-")) {
+        generatePartsTable();
+    }
+});
+
+printBtn.addEventListener("click", () => {
+    printBtn.style.display = "none";
+    window.print();
+    setTimeout(() => {
+        printBtn.style.display = "";
+    }, 100); // Restore button after printing
 });
