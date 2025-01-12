@@ -112,6 +112,20 @@ const rackCompositions = {
                 { partID: 26, quantity: 2, colorID: 1 },
             ],
     },
+    6: {
+        parts:
+            [
+                { partID: 17, quantity: 1, colorID: 1 },
+                { partID: 19, quantity: 2, colorID: 1 },
+                { partID: 20, quantity: 1, colorID: 1 },
+                { partID: 21, quantity: 1, colorID: 1 },
+                { partID: 22, quantity: 8, colorID: 1 },
+                { partID: 23, quantity: 16, colorID: 1 },
+                { partID: 24, quantity: 2, colorID: 1 },
+                { partID: 25, quantity: 2, colorID: 1 },
+                { partID: 26, quantity: 4, colorID: 1 },
+            ],
+    },
 
 }
 
