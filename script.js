@@ -22,6 +22,17 @@ const rackParts = {
     13: { code: "37", name: "SHELF BAR SHORT" },
     14: { code: "37", name: "SHELF TOP SHORT" },
     15: { code: "37", name: "SHELF BOTTOM SHORT" },
+    16: { code: "2C", name: "NET 2000mm" },
+    17: { code: "2C", name: "NET 1800mm" },
+    18: { code: "2C", name: "STAND 2000mm" },
+    19: { code: "2C", name: "STAND 1800mm" },
+    20: { code: "2C", name: "FATHI TOP" },
+    21: { code: "2C", name: "FATHI BOTTOM" },
+    22: { code: "2C", name: "SHELF TOP" },
+    23: { code: "2C", name: "CLIP" },
+    24: { code: "2C", name: "SHELF BOTTOM" },
+    25: { code: "2C", name: "BRACKET FRONT" },
+    26: { code: "2C", name: "BRACKET SIDE" },
 };
 
 const rack = {
@@ -29,6 +40,9 @@ const rack = {
     2: { code: "37", name: "MIDDLE RACK" },
     3: { code: "37", name: "END RACK" },
     4: { code: "37", name: "EXTRA SHELF" },
+    5: { code: "2C", name: "SINGLE SIDE 6.5ft" },
+    6: { code: "2C", name: "DOUBLE SIDE 6ft" },
+    7: { code: "2C", name: "END RACK 6ft" },
 };
 
 const colors = {
@@ -84,6 +98,20 @@ const rackCompositions = {
                 { partID: 12, quantity: 1, colorID: 2 },
             ],
     },
+    5: {
+        parts:
+            [
+                { partID: 16, quantity: 1, colorID: 1 },
+                { partID: 18, quantity: 2, colorID: 1 },
+                { partID: 20, quantity: 1, colorID: 1 },
+                { partID: 21, quantity: 1, colorID: 1 },
+                { partID: 22, quantity: 5, colorID: 1 },
+                { partID: 23, quantity: 10, colorID: 1 },
+                { partID: 24, quantity: 1, colorID: 1 },
+                { partID: 25, quantity: 1, colorID: 1 },
+                { partID: 26, quantity: 2, colorID: 1 },
+            ],
+    },
 
 }
 
@@ -107,7 +135,7 @@ function populateRackCodeOptions() {
 // Function to display all rack types in a table with quantity input fields
 function displayRackTypesTable() {
     const selectedRackCode = rackCodeSelect.options[rackCodeSelect.selectedIndex].text;
-    const availableRackTypes = Object.keys(rack).filter((id) => rack[id].code === selectedRackCode);
+    const availableRackTypes = Object.keys(rack).filter((id) => rack[id].code === selectedRackCode).map(Number);
 
     // clear the table if no rack types are available
     if (availableRackTypes.length === 0) {
@@ -119,9 +147,8 @@ function displayRackTypesTable() {
     const rackTypesTableHTML = `
         <table class="w-full border-collapse border border-gray-300 text-lg mt-4">
             <tbody>
-                ${Object.keys(rack)
-                    .map(
-                        (id) => `
+            ${availableRackTypes
+            .map((id) => `
                         <tr>
                             <td class="border border-gray-300 px-4 py-1">${rack[id].name}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">
@@ -135,8 +162,8 @@ function displayRackTypesTable() {
                             </td>
                         </tr>
                     `
-                    )
-                    .join("")}
+            )
+            .join("")}
             </tbody>
         </table>
     `;
@@ -199,16 +226,16 @@ function generatePartsTable() {
             </thead>
             <tbody>
                 ${tableData
-                    .map(
-                        (part) => `
+            .map(
+                (part) => `
                         <tr>
                             <td class="border border-gray-300 px-4 py-1">${part.name}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">${part.color}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">${part.quantity}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center"></td>
                         </tr>`
-                    )
-                    .join("")}
+            )
+            .join("")}
             </tbody>
         </table>
     `;
