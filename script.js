@@ -233,10 +233,25 @@ document.addEventListener("input", (e) => {
     }
 });
 
-printBtn.addEventListener("click", () => {
-    printBtn.style.display = "none";
+// Function to handle printing with row removal
+function handlePrint() {
+    const rows = Array.from(document.querySelectorAll("input"));
+
+    rows.forEach((input) => {
+        const quantity = parseInt(input.value, 10);
+        if (quantity === 0) {
+            const row = input.closest("tr");
+            if (row) row.style.display = "none"; // Hide rows with quantity 0
+        }
+    });
+
     window.print();
-    setTimeout(() => {
-        printBtn.style.display = "";
-    }, 100); // Restore button after printing
-});
+
+    // Restore all rows after printing
+    rows.forEach((input) => {
+        const row = input.closest("tr");
+        if (row) row.style.display = "";
+    });
+}
+
+printBtn.addEventListener("click", handlePrint);
