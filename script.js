@@ -3,33 +3,33 @@ const rackCode = {
     1: "2C",
     2: "8",
     3: "17",
-    4: "37 MINISO RACK",
+    4: "37",
 }
 
 const rackParts = {
-    1: { code: 37, name: "BACK BOARD SINGLE RACK 6.5ft" },
-    2: { code: 37, name: "BACK BOARD MIDDLE RACK" },
-    3: { code: 37, name: "SIDE BOARD END RACK" },
-    4: { code: 37, name: "FRAME SINGLE RACK" },
-    5: { code: 37, name: "FRAME MIDDLE RACK" },
-    6: { code: 37, name: "FRAME END RACK" },
-    7: { code: 37, name: "FATHI TOP" },
-    8: { code: 37, name: "FATHI BOTTOM" },
-    9: { code: 37, name: "SHELF TOP" },
-    10: { code: 37, name: "SHELF BOTTOM" },
-    11: { code: 37, name: "SHELF CLIP" },
-    12: { code: 37, name: "SHELF BAR LONG" },
-    13: { code: 37, name: "SHELF BAR SHORT" },
-    14: { code: 37, name: "SHELF TOP SHORT" },
-    15: { code: 37, name: "SHELF BOTTOM SHORT" },
-}
+    1: { code: "37", name: "BACK BOARD SINGLE RACK 6.5ft" },
+    2: { code: "37", name: "BACK BOARD MIDDLE RACK" },
+    3: { code: "37", name: "SIDE BOARD END RACK" },
+    4: { code: "37", name: "FRAME SINGLE RACK" },
+    5: { code: "37", name: "FRAME MIDDLE RACK" },
+    6: { code: "37", name: "FRAME END RACK" },
+    7: { code: "37", name: "FATHI TOP" },
+    8: { code: "37", name: "FATHI BOTTOM" },
+    9: { code: "37", name: "SHELF TOP" },
+    10: { code: "37", name: "SHELF BOTTOM" },
+    11: { code: "37", name: "SHELF CLIP" },
+    12: { code: "37", name: "SHELF BAR LONG" },
+    13: { code: "37", name: "SHELF BAR SHORT" },
+    14: { code: "37", name: "SHELF TOP SHORT" },
+    15: { code: "37", name: "SHELF BOTTOM SHORT" },
+};
 
-const rackType = {
-    1: { code: 37, name: "SINGLE RACK 6.5ft" },
-    2: { code: 37, name: "MIDDLE RACK" },
-    3: { code: 37, name: "END RACK" },
-    4: { code: 37, name: "EXTRA SHELF" },
-}
+const rack = {
+    1: { code: "37", name: "SINGLE RACK 6.5ft" },
+    2: { code: "37", name: "MIDDLE RACK" },
+    3: { code: "37", name: "END RACK" },
+    4: { code: "37", name: "EXTRA SHELF" },
+};
 
 const colors = {
     1: "WHITE",
@@ -40,7 +40,6 @@ const colors = {
 
 const rackCompositions = {
     1: {
-        rackTypeID: 1,
         parts:
             [
                 { partID: 1, quantity: 1, colorID: 3 },
@@ -54,7 +53,6 @@ const rackCompositions = {
             ],
     },
     2: {
-        rackTypeID: 2,
         parts:
             [
                 { partID: 2, quantity: 1, colorID: 3 },
@@ -68,7 +66,6 @@ const rackCompositions = {
             ],
     },
     3: {
-        rackTypeID: 3,
         parts:
             [
                 { partID: 3, quantity: 2, colorID: 3 },
@@ -80,7 +77,6 @@ const rackCompositions = {
             ],
     },
     4: {
-        rackTypeID: 4,
         parts:
             [
                 { partID: 9, quantity: 1, colorID: 3 },
@@ -110,14 +106,25 @@ function populateRackCodeOptions() {
 
 // Function to display all rack types in a table with quantity input fields
 function displayRackTypesTable() {
+    const dropdown = document.getElementById("rack-code");
+    const selectedRackCode = dropdown.options[dropdown.selectedIndex].text;
+    const availableRackTypes = Object.keys(rack).filter((id) => rack[id].code === selectedRackCode);
+
+    // clear the table if no rack types are available
+    if (availableRackTypes.length === 0) {
+        const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+        rackTypeTableContainer.innerHTML = "";
+        return;
+    }
+
     const rackTypesTableHTML = `
         <table class="w-full border-collapse border border-gray-300 text-lg mt-4">
             <tbody>
-                ${Object.keys(rackType)
+                ${Object.keys(rack)
                     .map(
                         (id) => `
                         <tr>
-                            <td class="border border-gray-300 px-4 py-1">${rackType[id].name}</td>
+                            <td class="border border-gray-300 px-4 py-1">${rack[id].name}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">
                                 <input
                                     type="number"
@@ -146,15 +153,15 @@ function generatePartsTable() {
     const tableData = [];
 
     rows.forEach((row) => {
-        const rackTypeID = parseInt(row.querySelector("input").id.replace("quantity-", ""), 10);
+        const rackID = parseInt(row.querySelector("input").id.replace("quantity-", ""), 10);
         const quantityInput = row.querySelector("input");
         const quantity = parseInt(quantityInput.value, 10);
 
         // Skip rows with invalid or zero quantities
-        if (!rackTypeID || isNaN(quantity) || quantity < 1) return;
+        if (!rackID || isNaN(quantity) || quantity < 1) return;
 
         // Find the composition for the selected rack type
-        const composition = rackCompositions[rackTypeID];
+        const composition = rackCompositions[rackID];
         if (!composition) return;
 
         composition.parts.forEach((part) => {
