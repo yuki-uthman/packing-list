@@ -106,8 +106,7 @@ function populateRackCodeOptions() {
 
 // Function to display all rack types in a table with quantity input fields
 function displayRackTypesTable() {
-    const dropdown = document.getElementById("rack-code");
-    const selectedRackCode = dropdown.options[dropdown.selectedIndex].text;
+    const selectedRackCode = rackCodeSelect.options[rackCodeSelect.selectedIndex].text;
     const availableRackTypes = Object.keys(rack).filter((id) => rack[id].code === selectedRackCode);
 
     // clear the table if no rack types are available
