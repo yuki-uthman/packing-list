@@ -28,6 +28,7 @@ const rackType = {
     1: { code: 37, name: "SINGLE RACK 6.5ft" },
     2: { code: 37, name: "MIDDLE RACK" },
     3: { code: 37, name: "END RACK" },
+    4: { code: 37, name: "EXTRA SHELF" },
 }
 
 const colors = {
@@ -76,6 +77,15 @@ const rackCompositions = {
                 { partID: 13, quantity: 4, colorID: 2 },
                 { partID: 14, quantity: 3, colorID: 2 },
                 { partID: 15, quantity: 1, colorID: 2 },
+            ],
+    },
+    4: {
+        rackTypeID: 4,
+        parts:
+            [
+                { partID: 9, quantity: 1, colorID: 3 },
+                { partID: 11, quantity: 2, colorID: 2 },
+                { partID: 12, quantity: 1, colorID: 2 },
             ],
     },
 
