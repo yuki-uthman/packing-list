@@ -33,6 +33,12 @@ const rackParts = {
     24: { code: "2C", name: "SHELF BOTTOM" },
     25: { code: "2C", name: "BRACKET FRONT" },
     26: { code: "2C", name: "BRACKET SIDE" },
+    27: { code: "2C", name: "NET (END RACK)" },
+    28: { code: "2C", name: "FATHI TOP (END RACK)" },
+    29: { code: "2C", name: "FATHI BOTTOM (END RACK)" },
+    30: { code: "2C", name: "SHELF TOP (END RACK)" },
+    31: { code: "2C", name: "SHELF BOTTOM (END RACK)" },
+    32: { code: "2C", name: "BRACKET FRONT (END RACK)" },
 };
 
 const rack = {
@@ -109,6 +115,34 @@ const rackCompositions = {
                 { partID: 23, quantity: 10, colorID: 1 },
                 { partID: 24, quantity: 1, colorID: 1 },
                 { partID: 25, quantity: 1, colorID: 1 },
+                { partID: 26, quantity: 2, colorID: 1 },
+            ],
+    },
+    6: {
+        parts:
+            [
+                { partID: 17, quantity: 1, colorID: 1 },
+                { partID: 19, quantity: 2, colorID: 1 },
+                { partID: 20, quantity: 1, colorID: 1 },
+                { partID: 21, quantity: 1, colorID: 1 },
+                { partID: 22, quantity: 8, colorID: 1 },
+                { partID: 23, quantity: 16, colorID: 1 },
+                { partID: 24, quantity: 2, colorID: 1 },
+                { partID: 25, quantity: 2, colorID: 1 },
+                { partID: 26, quantity: 4, colorID: 1 },
+            ],
+    },
+    7: {
+        parts:
+            [
+                { partID: 27, quantity: 1, colorID: 1 },
+                { partID: 19, quantity: 2, colorID: 1 },
+                { partID: 28, quantity: 1, colorID: 1 },
+                { partID: 29, quantity: 1, colorID: 1 },
+                { partID: 30, quantity: 4, colorID: 1 },
+                { partID: 23, quantity: 8, colorID: 1 },
+                { partID: 31, quantity: 1, colorID: 1 },
+                { partID: 32, quantity: 1, colorID: 1 },
                 { partID: 26, quantity: 2, colorID: 1 },
             ],
     },
