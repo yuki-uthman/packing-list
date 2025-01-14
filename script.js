@@ -39,6 +39,8 @@ const rackParts = {
     30: { code: "2C", name: "SHELF TOP (END RACK)" },
     31: { code: "2C", name: "SHELF BOTTOM (END RACK)" },
     32: { code: "2C", name: "BRACKET FRONT (END RACK)" },
+    33: { code: "37", name: "SHELF SCREW" },
+    34: { code: "37", name: "SHELF BOLT" },
 };
 
 const rack = {
@@ -70,6 +72,8 @@ const rackCompositions = {
                 { partID: 10, quantity: 1, colorID: 3 },
                 { partID: 11, quantity: 10, colorID: 2 },
                 { partID: 12, quantity: 5, colorID: 2 },
+                { partID: 33, quantity: 15, colorID: 2 },
+                { partID: 34, quantity: 15, colorID: 2 },
             ],
     },
     2: {
@@ -83,6 +87,8 @@ const rackCompositions = {
                 { partID: 10, quantity: 2, colorID: 3 },
                 { partID: 11, quantity: 16, colorID: 2 },
                 { partID: 12, quantity: 8, colorID: 2 },
+                { partID: 33, quantity: 16, colorID: 2 },
+                { partID: 34, quantity: 16, colorID: 2 },
             ],
     },
     3: {
@@ -94,6 +100,8 @@ const rackCompositions = {
                 { partID: 13, quantity: 4, colorID: 2 },
                 { partID: 14, quantity: 3, colorID: 2 },
                 { partID: 15, quantity: 1, colorID: 2 },
+                { partID: 33, quantity: 8, colorID: 2 },
+                { partID: 34, quantity: 8, colorID: 2 },
             ],
     },
     4: {
@@ -102,6 +110,8 @@ const rackCompositions = {
                 { partID: 9, quantity: 1, colorID: 3 },
                 { partID: 11, quantity: 2, colorID: 2 },
                 { partID: 12, quantity: 1, colorID: 2 },
+                { partID: 33, quantity: 3, colorID: 2 },
+                { partID: 34, quantity: 3, colorID: 2 },
             ],
     },
     5: {
