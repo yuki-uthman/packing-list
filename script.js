@@ -48,9 +48,9 @@ const rack = {
     2: { code: "37", name: "MIDDLE RACK" },
     3: { code: "37", name: "END RACK" },
     4: { code: "37", name: "EXTRA SHELF" },
-    5: { code: "2C", name: "SINGLE SIDE 6.5ft" },
-    6: { code: "2C", name: "DOUBLE SIDE 6ft" },
-    7: { code: "2C", name: "END RACK 6ft" },
+    5: { code: "2C", name: "SINGLE SIDE 6.5ft WHITE" },
+    6: { code: "2C", name: "DOUBLE SIDE 6ft WHITE" },
+    7: { code: "2C", name: "END RACK 6ft WHITE" },
 };
 
 const colors = {
