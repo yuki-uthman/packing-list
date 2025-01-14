@@ -58,7 +58,6 @@ const colors = {
     1: "WHITE",
     2: "BLACK",
     3: "WOOD",
-    4: "BLACK",
 }
 
 const rackCompositions = {
