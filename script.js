@@ -52,13 +52,14 @@ const rack = {
     6: { code: "2C", name: "DOUBLE SIDE 6ft WHITE" },
     7: { code: "2C", name: "END RACK 6ft WHITE" },
     8: { code: "2C", name: "EXTRA SHELF WHTIE" },
+    9: { code: "2C", name: "SINGLE SIDE 6.5ft BLACK" },
+    10: { code: "2C", name: "END RACK 5ft BLACK" },
 };
 
 const colors = {
     1: "WHITE",
     2: "BLACK",
     3: "WOOD",
-    4: "BLACK",
 }
 
 const rackCompositions = {
@@ -162,6 +163,41 @@ const rackCompositions = {
             [
                 { partID: 22, quantity: 1, colorID: 1 },
                 { partID: 23, quantity: 2, colorID: 1 },
+            ],
+    },
+    9: {
+        parts:
+            [
+                { partID: 16, quantity: 1, colorID: 2 },
+                { partID: 18, quantity: 2, colorID: 2 },
+                { partID: 20, quantity: 1, colorID: 2 },
+                { partID: 21, quantity: 1, colorID: 2 },
+                { partID: 22, quantity: 5, colorID: 2 },
+                { partID: 23, quantity: 10, colorID: 2 },
+                { partID: 24, quantity: 1, colorID: 2 },
+                { partID: 25, quantity: 1, colorID: 2 },
+                { partID: 26, quantity: 2, colorID: 2 },
+            ],
+    },
+    9: {
+        parts:
+            [
+                { partID: 27, quantity: 1, colorID: 2 },
+                { partID: 19, quantity: 2, colorID: 2 },
+                { partID: 28, quantity: 1, colorID: 2 },
+                { partID: 29, quantity: 1, colorID: 2 },
+                { partID: 30, quantity: 4, colorID: 2 },
+                { partID: 23, quantity: 8, colorID: 2 },
+                { partID: 31, quantity: 1, colorID: 2 },
+                { partID: 32, quantity: 1, colorID: 2 },
+                { partID: 26, quantity: 2, colorID: 2 },
+            ],
+    },
+    10: {
+        parts:
+            [
+                { partID: 22, quantity: 1, colorID: 2 },
+                { partID: 23, quantity: 2, colorID: 2 },
             ],
     },
 
