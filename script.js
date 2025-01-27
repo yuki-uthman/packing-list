@@ -41,6 +41,15 @@ const rackParts = {
     32: { code: "2C", name: "BRACKET FRONT (END RACK)" },
     33: { code: "37", name: "SHELF SCREW" },
     34: { code: "37", name: "SHELF BOLT" },
+    35: { code: "17", name: "BACK BOARD" },
+    37: { code: "17", name: "STAND SINGLE" },
+    38: { code: "17", name: "STAND DOUBLE" },
+    39: { code: "17", name: "FATHI TOP" },
+    40: { code: "17", name: "FATHI BOTTOM" },
+    41: { code: "17", name: "SHELF TOP" },
+    42: { code: "17", name: "CLIP" },
+    43: { code: "17", name: "SHELF BOTTOM" },
+    44: { code: "17", name: "BRACKET FRONT" },
 };
 
 const rack = {
@@ -54,6 +63,8 @@ const rack = {
     8: { code: "2C", name: "EXTRA SHELF WHTIE" },
     9: { code: "2C", name: "SINGLE SIDE 6.5ft BLACK" },
     10: { code: "2C", name: "END RACK 5ft BLACK" },
+    11: { code: "17", name: "SINGLE SIDE" },
+    12: { code: "17", name: "DOUBLE SIDE" },
 };
 
 const colors = {
@@ -198,6 +209,28 @@ const rackCompositions = {
             [
                 { partID: 22, quantity: 1, colorID: 2 },
                 { partID: 23, quantity: 2, colorID: 2 },
+            ],
+    },
+    11: {
+        parts:
+            [
+                { partID: 35, quantity: 6, colorID: 1 },
+                { partID: 37, quantity: 1, colorID: 1 },
+                { partID: 41, quantity: 5, colorID: 1 },
+                { partID: 42, quantity: 10, colorID: 1 },
+                { partID: 43, quantity: 1, colorID: 1 },
+                { partID: 44, quantity: 1, colorID: 1 },
+            ],
+    },
+    12: {
+        parts:
+            [
+                { partID: 35, quantity: 6, colorID: 1 },
+                { partID: 38, quantity: 1, colorID: 1 },
+                { partID: 41, quantity: 8, colorID: 1 },
+                { partID: 42, quantity: 16, colorID: 1 },
+                { partID: 43, quantity: 2, colorID: 1 },
+                { partID: 44, quantity: 2, colorID: 1 },
             ],
     },
 
