@@ -65,6 +65,7 @@ const rack = {
     10: { code: "2C", name: "END RACK 5ft BLACK" },
     11: { code: "17", name: "SINGLE SIDE" },
     12: { code: "17", name: "DOUBLE SIDE" },
+    13: { code: "2C", name: "DOUBLE SIDE 6.5ft WHITE" },
 };
 
 const colors = {
@@ -231,6 +232,20 @@ const rackCompositions = {
                 { partID: 42, quantity: 16, colorID: 1 },
                 { partID: 43, quantity: 2, colorID: 1 },
                 { partID: 44, quantity: 2, colorID: 1 },
+            ],
+    },
+    13: {
+        parts:
+            [
+                { partID: 17, quantity: 1, colorID: 1 },
+                { partID: 19, quantity: 2, colorID: 1 },
+                { partID: 20, quantity: 1, colorID: 1 },
+                { partID: 21, quantity: 1, colorID: 1 },
+                { partID: 22, quantity: 10, colorID: 1 },
+                { partID: 23, quantity: 20, colorID: 1 },
+                { partID: 24, quantity: 2, colorID: 1 },
+                { partID: 25, quantity: 2, colorID: 1 },
+                { partID: 26, quantity: 4, colorID: 1 },
             ],
     },
 
