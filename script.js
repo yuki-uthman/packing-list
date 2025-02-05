@@ -82,21 +82,6 @@ const rackCompositions = {
                 { partID: 4, quantity: 2, colorID: 2 },
                 { partID: 7, quantity: 1, colorID: 2 },
                 { partID: 8, quantity: 1, colorID: 2 },
-                { partID: 9, quantity: 4, colorID: 3 },
-                { partID: 10, quantity: 1, colorID: 3 },
-                { partID: 11, quantity: 10, colorID: 2 },
-                { partID: 12, quantity: 5, colorID: 2 },
-                { partID: 33, quantity: 15, colorID: 2 },
-                { partID: 34, quantity: 15, colorID: 2 },
-            ],
-    },
-    2: {
-        parts:
-            [
-                { partID: 2, quantity: 1, colorID: 3 },
-                { partID: 5, quantity: 2, colorID: 2 },
-                { partID: 7, quantity: 1, colorID: 2 },
-                { partID: 8, quantity: 1, colorID: 2 },
                 { partID: 9, quantity: 6, colorID: 3 },
                 { partID: 10, quantity: 2, colorID: 3 },
                 { partID: 11, quantity: 16, colorID: 2 },
@@ -223,8 +208,8 @@ const rackCompositions = {
     13: {
         parts:
             [
-                { partID: 17, quantity: 1, colorID: 1 },
-                { partID: 19, quantity: 2, colorID: 1 },
+                { partID: 16, quantity: 1, colorID: 1 },
+                { partID: 18, quantity: 2, colorID: 1 },
                 { partID: 20, quantity: 1, colorID: 1 },
                 { partID: 21, quantity: 1, colorID: 1 },
                 { partID: 22, quantity: 10, colorID: 1 },
