@@ -66,6 +66,7 @@ const rack = {
     11: { code: "17", name: "SINGLE SIDE" },
     12: { code: "17", name: "DOUBLE SIDE" },
     13: { code: "2C", name: "DOUBLE SIDE 6.5ft WHITE" },
+    14: { code: "2C", name: "DOUBLE SIDE 6.5ft BLACK" },
 };
 
 const colors = {
@@ -217,6 +218,20 @@ const rackCompositions = {
                 { partID: 24, quantity: 2, colorID: 1 },
                 { partID: 25, quantity: 2, colorID: 1 },
                 { partID: 26, quantity: 4, colorID: 1 },
+            ],
+    },
+    14: {
+        parts:
+            [
+                { partID: 16, quantity: 1, colorID: 2 },
+                { partID: 18, quantity: 2, colorID: 2 },
+                { partID: 20, quantity: 1, colorID: 2 },
+                { partID: 21, quantity: 1, colorID: 2 },
+                { partID: 22, quantity: 10, colorID: 2 },
+                { partID: 23, quantity: 20, colorID: 2 },
+                { partID: 24, quantity: 2, colorID: 2 },
+                { partID: 25, quantity: 2, colorID: 2 },
+                { partID: 26, quantity: 4, colorID: 2 },
             ],
     },
 
