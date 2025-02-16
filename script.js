@@ -69,6 +69,7 @@ const rack = {
     12: { code: "17", name: "DOUBLE SIDE" },
     13: { code: "2C", name: "DOUBLE SIDE 6.5ft WHITE" },
     14: { code: "2C", name: "DOUBLE SIDE 6.5ft BLACK" },
+    15: { code: "2C", name: "EXTRA SHELF SMALL BLACK" },
 };
 
 const colors = {
@@ -241,6 +242,13 @@ const rackCompositions = {
                 { partID: 24, quantity: 2, colorID: 2 },
                 { partID: 25, quantity: 2, colorID: 2 },
                 { partID: 26, quantity: 4, colorID: 2 },
+            ],
+    },
+    15: {
+        parts:
+            [
+                { partID: 30, quantity: 1, colorID: 2 },
+                { partID: 23, quantity: 2, colorID: 2 },
             ],
     },
 
