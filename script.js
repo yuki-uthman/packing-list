@@ -50,6 +50,8 @@ const rackParts = {
     42: { code: "17", name: "CLIP" },
     43: { code: "17", name: "SHELF BOTTOM" },
     44: { code: "17", name: "BRACKET FRONT" },
+    45: { code: "2C", name: "NET 1500mm" },
+    46: { code: "2C", name: "STAND 1500mm" },
 };
 
 const rack = {
@@ -180,8 +182,15 @@ const rackCompositions = {
     10: {
         parts:
             [
-                { partID: 22, quantity: 1, colorID: 2 },
-                { partID: 23, quantity: 2, colorID: 2 },
+                { partID: 45, quantity: 1, colorID: 2 },
+                { partID: 46, quantity: 2, colorID: 2 },
+                { partID: 28, quantity: 1, colorID: 2 },
+                { partID: 29, quantity: 1, colorID: 2 },
+                { partID: 30, quantity: 4, colorID: 2 },
+                { partID: 23, quantity: 8, colorID: 2 },
+                { partID: 31, quantity: 1, colorID: 2 },
+                { partID: 32, quantity: 1, colorID: 2 },
+                { partID: 26, quantity: 2, colorID: 2 },
             ],
     },
     11: {
