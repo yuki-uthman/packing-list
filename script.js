@@ -52,14 +52,15 @@ const rackParts = {
     44: { code: "17", name: "BRACKET FRONT" },
     45: { code: "2C", name: "NET 1500mm" },
     46: { code: "2C", name: "STAND 1500mm" },
-    47: { code: "8A", name: "BACK BOARD (END RACK)" },
-    48: { code: "8A", name: "STAND (END RACK)" },
-    49: { code: "8A", name: "FATHI TOP (END RACK)" },
-    50: { code: "8A", name: "FATHI BOTTOM (END RACK)" },
-    51: { code: "8A", name: "SHELF TOP (END RACK)" },
-    52: { code: "8A", name: "CLIP" },
-    53: { code: "8A", name: "SHELF BOTTOM (END RACK)" },
-    54: { code: "8A", name: "BRACKET FRONT (END RACK)" },
+    47: { code: "8A", name: "BACK PLATE SMALL (END RACK)" },
+    48: { code: "8A", name: "BACK PLATE BIG (END RACK)" },
+    49: { code: "8A", name: "STAND (END RACK)" },
+    50: { code: "8A", name: "FATHI TOP (END RACK)" },
+    51: { code: "8A", name: "FATHI BOTTOM (END RACK)" },
+    52: { code: "8A", name: "SHELF TOP (END RACK)" },
+    53: { code: "8A", name: "CLIP" },
+    54: { code: "8A", name: "SHELF BOTTOM (END RACK)" },
+    55: { code: "8A", name: "BRACKET FRONT (END RACK)" },
 };
 
 const rack = {
@@ -264,13 +265,14 @@ const rackCompositions = {
         parts:
             [
                 { partID: 47, quantity: 1, colorID: 2 },
-                { partID: 48, quantity: 2, colorID: 2 },
-                { partID: 49, quantity: 1, colorID: 2 },
+                { partID: 48, quantity: 4, colorID: 2 },
+                { partID: 49, quantity: 2, colorID: 2 },
                 { partID: 50, quantity: 1, colorID: 2 },
-                { partID: 51, quantity: 4, colorID: 2 },
-                { partID: 52, quantity: 8, colorID: 2 },
-                { partID: 53, quantity: 1, colorID: 2 },
+                { partID: 51, quantity: 1, colorID: 2 },
+                { partID: 52, quantity: 4, colorID: 2 },
+                { partID: 53, quantity: 8, colorID: 2 },
                 { partID: 54, quantity: 1, colorID: 2 },
+                { partID: 55, quantity: 1, colorID: 2 },
             ],
     },
 
