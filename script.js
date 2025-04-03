@@ -277,7 +277,7 @@ const rackCompositions = {
                 { partID: 57, quantity: 6, colorID: 2 },
                 { partID: 58, quantity: 1, colorID: 2 },
                 { partID: 60, quantity: 1, colorID: 2 },
-                { partID: 61, quantity: 1, colorID: 2 },
+                { partID: 61, quantity: 4, colorID: 2 },
                 { partID: 53, quantity: 8, colorID: 2 },
                 { partID: 62, quantity: 1, colorID: 2 },
                 { partID: 63, quantity: 1, colorID: 2 },
