@@ -61,6 +61,14 @@ const rackParts = {
     53: { code: "8A", name: "CLIP" },
     54: { code: "8A", name: "SHELF BOTTOM (END RACK)" },
     55: { code: "8A", name: "BRACKET FRONT (END RACK)" },
+    56: { code: "8A", name: "BACK PLATE SMALL" },
+    57: { code: "8A", name: "BACK PLATE BIG" },
+    58: { code: "8A", name: "STAND SINGLE SIDE" },
+    59: { code: "8A", name: "STAND DOUBLE SIDE" },
+    60: { code: "8A", name: "FATHI TOP" },
+    61: { code: "8A", name: "SHELF TOP" },
+    62: { code: "8A", name: "SHELF BOTTOM" },
+    63: { code: "8A", name: "BRACKET FRONT" },
 };
 
 const rack = {
@@ -79,7 +87,9 @@ const rack = {
     13: { code: "2C", name: "DOUBLE SIDE 6.5ft WHITE" },
     14: { code: "2C", name: "DOUBLE SIDE 6.5ft BLACK" },
     15: { code: "2C", name: "EXTRA SHELF SMALL BLACK" },
-    16: { code: "8A", name: "END RACK 5ft" },
+    16: { code: "8A", name: "SINGLE SIDE 6ft" },
+    17: { code: "8A", name: "DOUBLE SIDE 5ft" },
+    18: { code: "8A", name: "END RACK 5ft" },
 };
 
 const colors = {
@@ -262,6 +272,31 @@ const rackCompositions = {
             ],
     },
     16: {
+        parts:
+            [
+                { partID: 57, quantity: 6, colorID: 2 },
+                { partID: 58, quantity: 1, colorID: 2 },
+                { partID: 60, quantity: 1, colorID: 2 },
+                { partID: 61, quantity: 1, colorID: 2 },
+                { partID: 53, quantity: 8, colorID: 2 },
+                { partID: 62, quantity: 1, colorID: 2 },
+                { partID: 63, quantity: 1, colorID: 2 },
+            ],
+    },
+    17: {
+        parts:
+            [
+                { partID: 56, quantity: 1, colorID: 2 },
+                { partID: 57, quantity: 4, colorID: 2 },
+                { partID: 59, quantity: 1, colorID: 2 },
+                { partID: 60, quantity: 1, colorID: 2 },
+                { partID: 61, quantity: 6, colorID: 2 },
+                { partID: 53, quantity: 12, colorID: 2 },
+                { partID: 62, quantity: 2, colorID: 2 },
+                { partID: 63, quantity: 2, colorID: 2 },
+            ],
+    },
+    18: {
         parts:
             [
                 { partID: 47, quantity: 1, colorID: 2 },
