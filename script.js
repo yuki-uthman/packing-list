@@ -111,7 +111,6 @@ const rack = {
     19: { code: "2C", name: "DOUBLE SIDE 6ft BLACK" },
     20: { code: "RD8", name: "SINGLE SIDE 6ft" },
     21: { code: "RD8", name: "DOUBLE SIDE 5ft" },
-    22: { code: "RD8", name: "END RACK 5ft" },
 };
 
 const colors = {
