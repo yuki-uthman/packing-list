@@ -90,6 +90,7 @@ const rack = {
     16: { code: "8A", name: "SINGLE SIDE 6ft" },
     17: { code: "8A", name: "DOUBLE SIDE 5ft" },
     18: { code: "8A", name: "END RACK 5ft" },
+    19: { code: "2C", name: "DOUBLE SIDE 6ft BLACK" },
 };
 
 const colors = {
@@ -307,6 +308,20 @@ const rackCompositions = {
                 { partID: 53, quantity: 8, colorID: 2 },
                 { partID: 54, quantity: 1, colorID: 2 },
                 { partID: 55, quantity: 1, colorID: 2 },
+            ],
+    },
+    19: {
+        parts:
+            [
+                { partID: 17, quantity: 1, colorID: 2 },
+                { partID: 19, quantity: 2, colorID: 2 },
+                { partID: 20, quantity: 1, colorID: 2 },
+                { partID: 21, quantity: 1, colorID: 2 },
+                { partID: 22, quantity: 8, colorID: 2 },
+                { partID: 23, quantity: 16, colorID: 2 },
+                { partID: 24, quantity: 2, colorID: 2 },
+                { partID: 25, quantity: 2, colorID: 2 },
+                { partID: 26, quantity: 4, colorID: 2 },
             ],
     },
 
