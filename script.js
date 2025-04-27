@@ -2,9 +2,9 @@
 const rackCode = {
     1: "2C",
     2: "RD8A",
-    3: "17",
-    4: "37",
-    5: "RD8",
+    3: "RD8",
+    4: "17",
+    5: "37",
 }
 
 const rackParts = {
