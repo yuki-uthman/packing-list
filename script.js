@@ -87,6 +87,8 @@ const rackParts = {
     78: { code: "RD8", name: "SHELF TOP" },
     79: { code: "RD8", name: "SHELF BOTTOM" },
     80: { code: "RD8", name: "BRACKET FRONT" },
+    81: { code: "37", name: "BACK BOARD SINGLE RACK 7.5ft" },
+    82: { code: "37", name: "FRAME SINGLE RACK 7.5ft" },
 };
 
 const rack = {
@@ -111,6 +113,7 @@ const rack = {
     19: { code: "2C", name: "DOUBLE SIDE 6ft BLACK" },
     20: { code: "RD8", name: "SINGLE SIDE 6ft" },
     21: { code: "RD8", name: "DOUBLE SIDE 5ft" },
+    22: { code: "37", name: "SINGLE RACK 7.5ft" },
 };
 
 const colors = {
@@ -381,6 +384,21 @@ const rackCompositions = {
             { partID: 79, quantity: 2, colorID: 1 },
             { partID: 80, quantity: 2, colorID: 1 },
         ],
+    },
+    22: {
+        parts:
+            [
+                { partID: 81, quantity: 1, colorID: 3 },
+                { partID: 82, quantity: 2, colorID: 2 },
+                { partID: 7, quantity: 1, colorID: 2 },
+                { partID: 8, quantity: 1, colorID: 2 },
+                { partID: 9, quantity: 4, colorID: 3 },
+                { partID: 10, quantity: 1, colorID: 3 },
+                { partID: 11, quantity: 10, colorID: 2 },
+                { partID: 12, quantity: 5, colorID: 2 },
+                { partID: 33, quantity: 15, colorID: 2 },
+                { partID: 34, quantity: 15, colorID: 2 },
+            ],
     },
 
 }
