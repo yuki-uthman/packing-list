@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barcode Label Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-50 to-white p-6">
+  <div class="mx-auto max-w-4xl">
+    <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Barcode Label Generator</h1>
+    <p class="text-slate-600 mt-1">
+      Enter SKU, product name, and price. The app will generate a barcode and lay out your label with SKU under the code, then name on one line and price below.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-4 mt-6">
+      <div class="md:col-span-2">
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="flex flex-col">
+            <label class="text-sm font-medium text-slate-700">SKU</label>
+            <input id="sku" placeholder="e.g. ABC12345"
+              class="mt-1 h-11 rounded-2xl border border-slate-300 px-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400" />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-sm font-medium text-slate-700">Product name</label>
+            <input id="name" placeholder="e.g. Classic Mug"
+              class="mt-1 h-11 rounded-2xl border border-slate-300 px-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400" />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-sm font-medium text-slate-700">Price</label>
+            <input id="price" placeholder="e.g. 12.99"
+              class="mt-1 h-11 rounded-2xl border border-slate-300 px-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400" />
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-4">
+          <button type="button" onclick="clearForm()"
+            class="h-11 px-4 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium shadow-sm">
+            Clear
+          </button>
+          <button type="button" onclick="printLabel()"
+            class="h-11 px-4 rounded-2xl bg-black text-white hover:opacity-90 font-medium shadow">
+            Print label
+          </button>
+        </div>
+      </div>
+
+      <!-- Live preview -->
+      <div>
+        <div class="rounded-2xl border-2 border-dashed border-slate-300 p-4">
+          <div id="label" class="mx-auto rounded-xl border border-black bg-white flex flex-col justify-between p-1"
+               style="width:3cm; height:2.5cm; box-sizing:border-box;">
+            <svg id="barcode" class="w-full" style="height:18px;"></svg>
+            <div id="skuText" class="sku text-[2.2mm] text-center mt-[1mm] tracking-wide"></div>
+            <div id="nameText" class="name font-semibold truncate text-[2.5mm] mt-[0.5mm]"></div>
+            <div id="priceText" class="price font-bold text-[2.5mm]"></div>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 mt-2">
+          Layout: barcode with SKU directly below, then name on one line, and price on the next line with MVR prefix.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const skuInput = document.getElementById("sku");
+    const nameInput = document.getElementById("name");
+    const priceInput = document.getElementById("price");
+    const barcode = document.getElementById("barcode");
+    const skuText = document.getElementById("skuText");
+    const nameText = document.getElementById("nameText");
+    const priceText = document.getElementById("priceText");
+
+    function updateLabel() {
+      const sku = skuInput.value.trim();
+      const name = nameInput.value.trim();
+      const price = priceInput.value.trim();
+
+      if (sku) {
+        JsBarcode(barcode, sku, {
+          format: "CODE128",
+          displayValue: false,
+          height: 18,
+          width: 1.2,
+          margin: 0,
+        });
+        skuText.textContent = sku;
+      } else {
+        barcode.innerHTML = "";
+        skuText.textContent = "";
+      }
+
+      nameText.textContent = name;
+      priceText.textContent = price ? `MVR ${parseFloat(price).toFixed(2)}` : "";
+    }
+
+    function clearForm() {
+      skuInput.value = "";
+      nameInput.value = "";
+      priceInput.value = "";
+      updateLabel();
+    }
+
+    function printLabel() {
+      const node = document.getElementById("label");
+      const win = window.open("", "print");
+      win.document.write(`<!doctype html>
+        <html><head><meta charset='utf-8'>
+        <title>Print Label</title>
+        <style>
+          body{margin:0;padding:0;font-family:sans-serif;}
+          .label{width:3cm;height:2.5cm;border:1px solid #000;padding:1mm;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;}
+          svg{width:100%;height:18px;}
+          .sku{font-size:2.2mm;margin-top:0mm;text-align:center;}
+          .name{font-size:2.5mm;font-weight:bold;margin-top:0.5mm;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+          .price{font-size:2.5mm;font-weight:bold;margin-top:0.3mm;text-align:center;}
+        </style></head><body>${node.outerHTML}</body></html>`);
+      win.document.close();
+      win.focus();
+      win.print();
+      win.close();
+    }
+
+    skuInput.addEventListener("input", updateLabel);
+    nameInput.addEventListener("input", updateLabel);
+    priceInput.addEventListener("input", updateLabel);
+  </script>
+</body>
+</html>
+
