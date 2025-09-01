@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cash Denomination Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white border-2 rounded-xl shadow-lg p-6 w-full max-w-sm">
+    <h1 class="text-xl font-bold mb-4 text-center">Cash Calculator</h1>
+    <div id="denominations" class="w-full border-2 border-gray-300 rounded-lg overflow-hidden">
+      <!-- Rows will be generated here -->
+    </div>
+    <div class="mt-4 p-3 bg-gray-50 rounded-lg text-center">
+      <p class="text-3xl font-semibold">Total: <span id="total" class="text-3xl text-green-600">0.00</span></p>
+    </div>
+  </div>
+
+  <script>
+    const denominations = [
+      { label: "1000", value: 1000 },
+      { label: "500", value: 500 },
+      { label: "100", value: 100 },
+      { label: "20", value: 20 },
+      { label: "10", value: 10 },
+      { label: "5", value: 5 },
+      { label: "2", value: 2 },
+      { label: "1", value: 1 },
+      { label: "50¢", value: 0.5 },
+      { label: "25¢", value: 0.25 },
+    ];
+
+    const container = document.getElementById("denominations");
+    const totalDisplay = document.getElementById("total");
+
+    denominations.forEach(d => {
+      const row = document.createElement("div");
+      row.className = "flex items-center justify-between border-2 border-gray-300 last:border-b-0 px-3 py-2 bg-white";
+      row.innerHTML = `
+        <label class="text-lg font-semibold">${d.label}</label>
+        <input type="number" min="0" value="0" data-value="${d.value}" 
+          class="denomination-input w-20 border-2 border-gray-300 rounded-lg px-3 py-1 ml-2 text-center focus:ring focus:ring-blue-300" />
+      `;
+      container.appendChild(row);
+    });
+
+    function calculateTotal() {
+      let total = 0;
+      document.querySelectorAll(".denomination-input").forEach(input => {
+        const count = parseFloat(input.value) || 0;
+        const val = parseFloat(input.dataset.value);
+        total += count * val;
+      });
+      totalDisplay.textContent = total.toFixed(2);
+    }
+
+    document.querySelectorAll(".denomination-input").forEach(input => {
+      input.addEventListener("input", calculateTotal);
+    });
+  </script>
+</body>
+</html>
+
