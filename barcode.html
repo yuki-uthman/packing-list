@@ -1,4 +1,4 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -54,7 +54,7 @@
           <div id="label" class="mx-auto rounded-xl border border-black bg-white flex flex-col justify-between p-1"
                style="width:3cm; height:2.5cm; box-sizing:border-box;">
             <svg id="barcode" class="w-full" style="height:18px;"></svg>
-            <div id="skuText" class="sku text-[3.5mm] text-center mt-[1mm] tracking-wide"></div>
+            <div id="skuText" class="sku text-[3.5mm] text-center tracking-wide"></div>
             <div id="nameText" class="name font-semibold text-[4mm]"></div>
             <div id="priceText" class="price font-bold text-[4mm]"></div>
           </div>
@@ -107,184 +107,54 @@
 
     function printLabel() {
       const node = document.getElementById("label");
-      
-      // Create a temporary div to render the label at the correct size
+
+      // Create a temporary div with exact label size (30mm x 25mm)
       const tempDiv = document.createElement('div');
       tempDiv.style.position = 'absolute';
       tempDiv.style.left = '-9999px';
       tempDiv.style.top = '-9999px';
-      tempDiv.style.width = '300mm';
-      tempDiv.style.height = '250mm';
-      tempDiv.style.padding = '0mm';
+      tempDiv.style.width = '30mm';
+      tempDiv.style.height = '25mm';
+      tempDiv.style.margin = '0';
+      tempDiv.style.padding = '1mm';
       tempDiv.style.boxSizing = 'border-box';
-      tempDiv.style.display = 'flex';
-      tempDiv.style.flexDirection = 'column';
-      tempDiv.style.justifyContent = 'center';
-      tempDiv.style.alignItems = 'center';
       tempDiv.style.backgroundColor = 'white';
-      tempDiv.style.fontFamily = 'Arial, sans-serif';
-      
-      // Clone the label content
+
+      // Clone the label into tempDiv
       const labelClone = node.cloneNode(true);
       labelClone.style.width = '100%';
-      labelClone.style.height = 'auto';
+      labelClone.style.height = '100%';
       labelClone.style.border = 'none';
+      labelClone.style.margin = '0';
       labelClone.style.padding = '0';
-      labelClone.style.display = 'flex';
-      labelClone.style.flexDirection = 'column';
-      labelClone.style.justifyContent = 'center';
-      labelClone.style.alignItems = 'stretch';
-      labelClone.style.gap = '4mm';
-      
-      // Scale the barcode SVG
-      const barcodeSvg = labelClone.querySelector('svg');
-      if (barcodeSvg) {
-        barcodeSvg.style.width = '100%';
-        barcodeSvg.style.height = '45mm';
-        barcodeSvg.style.flexShrink = '0';
-      }
-      
-      // Scale text elements to match preview
-      const skuElement = labelClone.querySelector('.sku');
-      if (skuElement) {
-        skuElement.style.fontSize = '20mm';
-        skuElement.style.margin = '0';
-        skuElement.style.textAlign = 'center';
-        skuElement.style.letterSpacing = '1.5mm';
-        skuElement.style.lineHeight = '1';
-        skuElement.style.height = 'auto';
-      }
-      
-      const nameElement = labelClone.querySelector('.name');
-      if (nameElement) {
-        nameElement.style.fontSize = '50mm';
-        nameElement.style.fontWeight = 'bold';
-        nameElement.style.margin = '0';
-        nameElement.style.textAlign = 'center';
-        nameElement.style.lineHeight = '1';
-        nameElement.style.height = 'auto';
-      }
-
-      const priceElement = labelClone.querySelector('.price');
-      if (priceElement) {
-        priceElement.style.fontSize = '50mm';
-        priceElement.style.fontWeight = 'bold';
-        priceElement.style.margin = '0';
-        priceElement.style.textAlign = 'center';
-        priceElement.style.lineHeight = '1';
-        priceElement.style.height = 'auto';
-      }
-
       tempDiv.appendChild(labelClone);
       document.body.appendChild(tempDiv);
-      
-      // Convert to canvas first, then to PDF
+
+      // Render to canvas
       html2canvas(tempDiv, {
-        width: 300 * 3.78, // 300mm in pixels
-        height: 250 * 3.78, // 250mm in pixels
-        scale: 2, // Higher scale for better quality
-        useCORS: true,
-        allowTaint: true,
+        scale: 4, // high DPI
         backgroundColor: '#ffffff'
       }).then(canvas => {
-        // Create PDF with the specified dimensions
         const { jsPDF } = window.jspdf;
         const pdf = new jsPDF({
           orientation: 'landscape',
           unit: 'mm',
-          format: [300, 250] // Custom format matching our dimensions
+          format: [30, 25] // exact size
         });
-        
-        // Convert canvas to image data
+
         const imgData = canvas.toDataURL('image/png');
-        
-        // Add the image to PDF
-        pdf.addImage(imgData, 'PNG', 0, 0, 300, 250);
-        
-        // Generate filename with current date/time
-        const now = new Date();
-        const timestamp = now.getFullYear() + 
-                         String(now.getMonth() + 1).padStart(2, '0') + 
-                         String(now.getDate()).padStart(2, '0') + '_' +
-                         String(now.getHours()).padStart(2, '0') + 
-                         String(now.getMinutes()).padStart(2, '0');
-        
-        const sku = document.getElementById('sku').value.trim() || 'label';
-        const filename = `barcode_${sku}_${timestamp}.pdf`;
-        
+        pdf.addImage(imgData, 'PNG', 0, 0, 30, 25); // flush left, no margin
+
         // Open PDF in new tab
         const pdfBlob = pdf.output('blob');
         const pdfUrl = URL.createObjectURL(pdfBlob);
-        
-        const newWindow = window.open();
-        newWindow.document.write(`
-          <html>
-            <head>
-              <title>Barcode Label PDF</title>
-              <style>
-                body { 
-                  margin: 0; 
-                  padding: 20px; 
-                  background: #f0f0f0; 
-                  font-family: Arial, sans-serif; 
-                  text-align: center;
-                }
-                .container { 
-                  max-width: 800px; 
-                  margin: 0 auto; 
-                  background: white; 
-                  padding: 20px;
-                  border-radius: 8px; 
-                  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                }
-                .pdf-info {
-                  margin-bottom: 20px;
-                  padding: 15px;
-                  background: #f8f9fa;
-                  border-radius: 5px;
-                  border-left: 4px solid #007bff;
-                }
-                .btn { 
-                  display: inline-block;
-                  margin: 5px;
-                  padding: 10px 20px; 
-                  background: #007bff; 
-                  color: white; 
-                  text-decoration: none;
-                  border-radius: 5px; 
-                  cursor: pointer;
-                  border: none;
-                  font-size: 14px;
-                }
-                .btn:hover { background: #0056b3; }
-                .btn-secondary { background: #6c757d; }
-                .btn-secondary:hover { background: #545b62; }
-                .btn-success { background: #28a745; }
-                .btn-success:hover { background: #1e7e34; }
-                iframe {
-                  width: 100%;
-                  height: 500px;
-                  border: 1px solid #ddd;
-                  border-radius: 5px;
-                  margin-top: 20px;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="container">
-                <iframe src="${pdfUrl}"></iframe>
-              </div>
-            </body>
-          </html>
-        `);
-        newWindow.document.close();
-      }).catch(error => {
-        console.error('Error generating PDF:', error);
-        alert('Error generating PDF. Please try again.');
+        window.open(pdfUrl, '_blank');
+      }).catch(err => {
+        console.error('Error generating PDF:', err);
+        alert("Error generating PDF. Please try again.");
+      }).finally(() => {
+        document.body.removeChild(tempDiv);
       });
-      
-      // Clean up
-      document.body.removeChild(tempDiv);
     }
 
     skuInput.addEventListener("input", updateLabel);
@@ -293,4 +163,3 @@
   </script>
 </body>
 </html>
-
