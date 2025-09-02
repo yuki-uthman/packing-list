@@ -9,9 +9,12 @@
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
   <div class="bg-white border-2 rounded-xl shadow-lg p-6 w-full max-w-sm">
     <h1 class="text-xl font-bold mb-4 text-center">Cash Calculator</h1>
-    <div id="denominations" class="w-full border-2 border-gray-300 rounded-lg overflow-hidden">
+    
+    <!-- Make it grid with 2 columns -->
+    <div id="denominations" class="grid grid-cols-2 gap-2">
       <!-- Rows will be generated here -->
     </div>
+
     <div class="mt-4 p-3 bg-gray-50 rounded-lg text-center">
       <p class="text-3xl font-semibold">Total: <span id="total" class="text-3xl text-green-600">0.00</span></p>
     </div>
@@ -37,11 +40,11 @@
 
     denominations.forEach(d => {
       const row = document.createElement("div");
-      row.className = "flex items-center justify-between border-2 border-gray-300 last:border-b-0 px-3 py-2 bg-white";
+      row.className = "flex items-center justify-between border-2 border-gray-300 rounded-lg px-2 py-2 bg-white";
       row.innerHTML = `
         <label class="text-lg font-semibold">${d.label}</label>
         <input type="number" min="0" value="0" data-value="${d.value}" 
-          class="denomination-input w-20 border-2 border-gray-300 rounded-lg px-3 py-1 ml-2 text-center focus:ring focus:ring-blue-300" />
+          class="denomination-input w-16 border-2 border-gray-300 rounded-lg px-2 py-1 text-center focus:ring focus:ring-blue-300" />
       `;
       container.appendChild(row);
     });
@@ -62,4 +65,3 @@
   </script>
 </body>
 </html>
-
