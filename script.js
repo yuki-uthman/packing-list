@@ -506,6 +506,7 @@ function generatePartsTable() {
         return;
     }
 
+    // Store the current table data for later reference
     const tableHTML = `
         <table class="w-full border-collapse border border-gray-300 text-lg mt-4">
             <thead>
@@ -519,11 +520,20 @@ function generatePartsTable() {
             <tbody>
                 ${tableData
                     .map(
-                        (part) => `
-                        <tr>
+                        (part, index) => `
+                        <tr data-index="${index}">
                             <td class="border border-gray-300 px-4 py-1">${part.name}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">${part.color}</td>
-                            <td class="border border-gray-300 px-4 py-1 text-center">${part.quantity}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center">
+                                <input 
+                                    type="number" 
+                                    min="1" 
+                                    value="${part.quantity}" 
+                                    class="w-20 text-center border border-gray-300 rounded"
+                                    data-part-name="${part.name}"
+                                    data-color="${part.color}"
+                                />
+                            </td>
                             <td class="border border-gray-300 px-4 py-1 text-center"></td>
                         </tr>`,
                     )
@@ -533,6 +543,80 @@ function generatePartsTable() {
     `;
 
     tableContainer.innerHTML = tableHTML;
+
+    // Add event listeners to quantity inputs
+    const quantityInputs = tableContainer.querySelectorAll(
+        'input[type="number"]',
+    );
+    quantityInputs.forEach((input) => {
+        input.addEventListener("change", (e) => {
+            const newQuantity = parseInt(e.target.value, 10);
+            if (isNaN(newQuantity) || newQuantity < 1) {
+                e.target.value = 1; // Reset to minimum value if invalid
+                return;
+            }
+
+            // Find the row and update the quantity in the tableData
+            const row = e.target.closest("tr");
+            const index = parseInt(row.dataset.index, 10);
+            if (!isNaN(index) && tableData[index]) {
+                tableData[index].quantity = newQuantity;
+            }
+
+            // Update the table with new quantities
+            updatePartsTable(tableContainer, tableData);
+        });
+    });
+
+    // Store the table data for later reference
+    tableContainer.dataset.tableData = JSON.stringify(tableData);
+
+    tableContainer.innerHTML = tableHTML;
+}
+
+// Function to update the parts table with new quantities
+function updatePartsTable(container, data) {
+    const tbody = container.querySelector("tbody");
+    tbody.innerHTML = data
+        .map(
+            (part, index) => `
+            <tr data-index="${index}">
+                <td class="border border-gray-300 px-4 py-1">${part.name}</td>
+                <td class="border border-gray-300 px-4 py-1 text-center">${part.color}</td>
+                <td class="border border-gray-300 px-4 py-1 text-center">
+                    <input 
+                        type="number" 
+                        min="1" 
+                        value="${part.quantity}" 
+                        class="w-20 text-center border border-gray-300 rounded"
+                        data-part-name="${part.name}"
+                        data-color="${part.color}"
+                    />
+                </td>
+                <td class="border border-gray-300 px-4 py-1 text-center"></td>
+            </tr>`,
+        )
+        .join("");
+
+    // Re-attach event listeners
+    const quantityInputs = tbody.querySelectorAll('input[type="number"]');
+    quantityInputs.forEach((input) => {
+        input.addEventListener("change", (e) => {
+            const newQuantity = parseInt(e.target.value, 10);
+            if (isNaN(newQuantity) || newQuantity < 1) {
+                e.target.value = 1;
+                return;
+            }
+
+            const row = e.target.closest("tr");
+            const index = parseInt(row.dataset.index, 10);
+            if (!isNaN(index) && data[index]) {
+                data[index].quantity = newQuantity;
+            }
+
+            updatePartsTable(container, data);
+        });
+    });
 }
 
 // Event Listeners
