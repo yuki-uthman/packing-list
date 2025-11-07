@@ -5,7 +5,7 @@ const rackCode = {
     3: "RD8",
     4: "17",
     5: "37",
-}
+};
 
 const rackParts = {
     // 2C parts (IDs 1-15)
@@ -28,7 +28,7 @@ const rackParts = {
     17: { code: "2C", name: "BRACKET FRONT (END RACK)" },
     18: { code: "2C", name: "NET 1500mm" },
     19: { code: "2C", name: "STAND 1500mm" },
-    
+
     // RD8 parts (IDs 20-31)
     20: { code: "RD8", name: "BACK PLATE SMALL (END RACK)" },
     21: { code: "RD8", name: "BACK PLATE BIG (END RACK)" },
@@ -47,7 +47,7 @@ const rackParts = {
     34: { code: "RD8", name: "SHELF TOP" },
     35: { code: "RD8", name: "SHELF BOTTOM" },
     36: { code: "RD8", name: "BRACKET FRONT" },
-    
+
     // RD8A parts (IDs 37-50)
     37: { code: "RD8A", name: "BACK PLATE SMALL (END RACK)" },
     38: { code: "RD8A", name: "BACK PLATE BIG (END RACK)" },
@@ -66,7 +66,7 @@ const rackParts = {
     51: { code: "RD8A", name: "SHELF TOP" },
     52: { code: "RD8A", name: "SHELF BOTTOM" },
     53: { code: "RD8A", name: "BRACKET FRONT" },
-    
+
     // 37 parts (IDs 54-75)
     54: { code: "37", name: "BACK BOARD SINGLE RACK 6.5ft" },
     55: { code: "37", name: "BACK BOARD MIDDLE RACK" },
@@ -87,7 +87,7 @@ const rackParts = {
     70: { code: "37", name: "SHELF BOLT" },
     71: { code: "37", name: "BACK BOARD SINGLE RACK 7.5ft" },
     72: { code: "37", name: "FRAME SINGLE RACK 7.5ft" },
-    
+
     // 17 parts (IDs 73-80)
     73: { code: "17", name: "BACK BOARD" },
     74: { code: "17", name: "STAND SINGLE" },
@@ -129,247 +129,228 @@ const colors = {
     1: "WHITE",
     2: "BLACK",
     3: "WOOD",
-}
+};
 
 const rackCompositions = {
     1: {
-        parts:
-            [
-                { partID: 54, quantity: 1, colorID: 3 },
-                { partID: 57, quantity: 2, colorID: 2 },
-                { partID: 60, quantity: 1, colorID: 2 },
-                { partID: 61, quantity: 1, colorID: 2 },
-                { partID: 62, quantity: 4, colorID: 3 },
-                { partID: 63, quantity: 1, colorID: 3 },
-                { partID: 64, quantity: 10, colorID: 2 },
-                { partID: 65, quantity: 5, colorID: 2 },
-                { partID: 69, quantity: 15, colorID: 2 },
-                { partID: 70, quantity: 15, colorID: 2 },
-            ],
+        parts: [
+            { partID: 54, quantity: 1, colorID: 3 },
+            { partID: 57, quantity: 2, colorID: 2 },
+            { partID: 60, quantity: 1, colorID: 2 },
+            { partID: 61, quantity: 1, colorID: 2 },
+            { partID: 62, quantity: 4, colorID: 3 },
+            { partID: 63, quantity: 1, colorID: 3 },
+            { partID: 64, quantity: 10, colorID: 2 },
+            { partID: 65, quantity: 5, colorID: 2 },
+            { partID: 69, quantity: 15, colorID: 2 },
+            { partID: 70, quantity: 15, colorID: 2 },
+        ],
     },
     2: {
-        parts:
-            [
-                { partID: 55, quantity: 1, colorID: 3 },
-                { partID: 58, quantity: 2, colorID: 2 },
-                { partID: 60, quantity: 1, colorID: 2 },
-                { partID: 61, quantity: 1, colorID: 2 },
-                { partID: 62, quantity: 6, colorID: 3 },
-                { partID: 63, quantity: 2, colorID: 3 },
-                { partID: 64, quantity: 16, colorID: 2 },
-                { partID: 65, quantity: 10, colorID: 2 },
-                { partID: 69, quantity: 24, colorID: 2 },
-                { partID: 70, quantity: 24, colorID: 2 },
-            ],
+        parts: [
+            { partID: 55, quantity: 1, colorID: 3 },
+            { partID: 58, quantity: 2, colorID: 2 },
+            { partID: 60, quantity: 1, colorID: 2 },
+            { partID: 61, quantity: 1, colorID: 2 },
+            { partID: 62, quantity: 6, colorID: 3 },
+            { partID: 63, quantity: 2, colorID: 3 },
+            { partID: 64, quantity: 16, colorID: 2 },
+            { partID: 65, quantity: 10, colorID: 2 },
+            { partID: 69, quantity: 24, colorID: 2 },
+            { partID: 70, quantity: 24, colorID: 2 },
+        ],
     },
     3: {
-        parts:
-            [
-                { partID: 56, quantity: 2, colorID: 3 },
-                { partID: 59, quantity: 2, colorID: 2 },
-                { partID: 64, quantity: 8, colorID: 2 },
-                { partID: 66, quantity: 4, colorID: 2 },
-                { partID: 67, quantity: 3, colorID: 2 },
-                { partID: 68, quantity: 1, colorID: 2 },
-                { partID: 69, quantity: 8, colorID: 2 },
-                { partID: 70, quantity: 8, colorID: 2 },
-            ],
+        parts: [
+            { partID: 56, quantity: 2, colorID: 3 },
+            { partID: 59, quantity: 2, colorID: 2 },
+            { partID: 64, quantity: 8, colorID: 2 },
+            { partID: 66, quantity: 4, colorID: 2 },
+            { partID: 67, quantity: 3, colorID: 2 },
+            { partID: 68, quantity: 1, colorID: 2 },
+            { partID: 69, quantity: 8, colorID: 2 },
+            { partID: 70, quantity: 8, colorID: 2 },
+        ],
     },
     4: {
-        parts:
-            [
-                { partID: 62, quantity: 1, colorID: 3 },
-                { partID: 64, quantity: 2, colorID: 2 },
-                { partID: 65, quantity: 1, colorID: 2 },
-                { partID: 69, quantity: 3, colorID: 2 },
-                { partID: 70, quantity: 3, colorID: 2 },
-            ],
+        parts: [
+            { partID: 62, quantity: 1, colorID: 3 },
+            { partID: 64, quantity: 2, colorID: 2 },
+            { partID: 65, quantity: 1, colorID: 2 },
+            { partID: 69, quantity: 3, colorID: 2 },
+            { partID: 70, quantity: 3, colorID: 2 },
+        ],
     },
     5: {
-        parts:
-            [
-                { partID: 1, quantity: 1, colorID: 1 },
-                { partID: 3, quantity: 2, colorID: 1 },
-                { partID: 5, quantity: 1, colorID: 1 },
-                { partID: 6, quantity: 1, colorID: 1 },
-                { partID: 7, quantity: 5, colorID: 1 },
-                { partID: 8, quantity: 10, colorID: 1 },
-                { partID: 9, quantity: 1, colorID: 1 },
-                { partID: 10, quantity: 1, colorID: 1 },
-                { partID: 11, quantity: 2, colorID: 1 },
-            ],
+        parts: [
+            { partID: 1, quantity: 1, colorID: 1 },
+            { partID: 3, quantity: 2, colorID: 1 },
+            { partID: 5, quantity: 1, colorID: 1 },
+            { partID: 6, quantity: 1, colorID: 1 },
+            { partID: 7, quantity: 5, colorID: 1 },
+            { partID: 8, quantity: 10, colorID: 1 },
+            { partID: 9, quantity: 1, colorID: 1 },
+            { partID: 10, quantity: 1, colorID: 1 },
+            { partID: 11, quantity: 2, colorID: 1 },
+        ],
     },
     6: {
-        parts:
-            [
-                { partID: 2, quantity: 1, colorID: 1 },
-                { partID: 4, quantity: 2, colorID: 1 },
-                { partID: 5, quantity: 1, colorID: 1 },
-                { partID: 6, quantity: 1, colorID: 1 },
-                { partID: 7, quantity: 8, colorID: 1 },
-                { partID: 8, quantity: 16, colorID: 1 },
-                { partID: 9, quantity: 2, colorID: 1 },
-                { partID: 10, quantity: 2, colorID: 1 },
-                { partID: 11, quantity: 4, colorID: 1 },
-            ],
+        parts: [
+            { partID: 2, quantity: 1, colorID: 1 },
+            { partID: 4, quantity: 2, colorID: 1 },
+            { partID: 5, quantity: 1, colorID: 1 },
+            { partID: 6, quantity: 1, colorID: 1 },
+            { partID: 7, quantity: 8, colorID: 1 },
+            { partID: 8, quantity: 16, colorID: 1 },
+            { partID: 9, quantity: 2, colorID: 1 },
+            { partID: 10, quantity: 2, colorID: 1 },
+            { partID: 11, quantity: 4, colorID: 1 },
+        ],
     },
     7: {
-        parts:
-            [
-                { partID: 12, quantity: 1, colorID: 1 },
-                { partID: 4, quantity: 2, colorID: 1 },
-                { partID: 13, quantity: 1, colorID: 1 },
-                { partID: 14, quantity: 1, colorID: 1 },
-                { partID: 15, quantity: 4, colorID: 1 },
-                { partID: 8, quantity: 8, colorID: 1 },
-                { partID: 16, quantity: 1, colorID: 1 },
-                { partID: 17, quantity: 1, colorID: 1 },
-                { partID: 11, quantity: 2, colorID: 1 },
-            ],
+        parts: [
+            { partID: 12, quantity: 1, colorID: 1 },
+            { partID: 4, quantity: 2, colorID: 1 },
+            { partID: 13, quantity: 1, colorID: 1 },
+            { partID: 14, quantity: 1, colorID: 1 },
+            { partID: 15, quantity: 4, colorID: 1 },
+            { partID: 8, quantity: 8, colorID: 1 },
+            { partID: 16, quantity: 1, colorID: 1 },
+            { partID: 17, quantity: 1, colorID: 1 },
+            { partID: 11, quantity: 2, colorID: 1 },
+        ],
     },
     8: {
-        parts:
-            [
-                { partID: 7, quantity: 1, colorID: 1 },
-                { partID: 8, quantity: 2, colorID: 1 },
-            ],
+        parts: [
+            { partID: 7, quantity: 1, colorID: 1 },
+            { partID: 8, quantity: 2, colorID: 1 },
+        ],
     },
     9: {
-        parts:
-            [
-                { partID: 1, quantity: 1, colorID: 2 },
-                { partID: 3, quantity: 2, colorID: 2 },
-                { partID: 5, quantity: 1, colorID: 2 },
-                { partID: 6, quantity: 1, colorID: 2 },
-                { partID: 7, quantity: 5, colorID: 2 },
-                { partID: 8, quantity: 10, colorID: 2 },
-                { partID: 9, quantity: 1, colorID: 2 },
-                { partID: 10, quantity: 1, colorID: 2 },
-                { partID: 11, quantity: 2, colorID: 2 },
-            ],
+        parts: [
+            { partID: 1, quantity: 1, colorID: 2 },
+            { partID: 3, quantity: 2, colorID: 2 },
+            { partID: 5, quantity: 1, colorID: 2 },
+            { partID: 6, quantity: 1, colorID: 2 },
+            { partID: 7, quantity: 5, colorID: 2 },
+            { partID: 8, quantity: 10, colorID: 2 },
+            { partID: 9, quantity: 1, colorID: 2 },
+            { partID: 10, quantity: 1, colorID: 2 },
+            { partID: 11, quantity: 2, colorID: 2 },
+        ],
     },
     10: {
-        parts:
-            [
-                { partID: 18, quantity: 1, colorID: 2 },
-                { partID: 19, quantity: 2, colorID: 2 },
-                { partID: 13, quantity: 1, colorID: 2 },
-                { partID: 14, quantity: 1, colorID: 2 },
-                { partID: 15, quantity: 4, colorID: 2 },
-                { partID: 8, quantity: 8, colorID: 2 },
-                { partID: 16, quantity: 1, colorID: 2 },
-                { partID: 17, quantity: 1, colorID: 2 },
-                { partID: 11, quantity: 2, colorID: 2 },
-            ],
+        parts: [
+            { partID: 18, quantity: 1, colorID: 2 },
+            { partID: 19, quantity: 2, colorID: 2 },
+            { partID: 13, quantity: 1, colorID: 2 },
+            { partID: 14, quantity: 1, colorID: 2 },
+            { partID: 15, quantity: 4, colorID: 2 },
+            { partID: 8, quantity: 8, colorID: 2 },
+            { partID: 16, quantity: 1, colorID: 2 },
+            { partID: 17, quantity: 1, colorID: 2 },
+            { partID: 11, quantity: 2, colorID: 2 },
+        ],
     },
     11: {
-        parts:
-            [
-                { partID: 73, quantity: 6, colorID: 1 },
-                { partID: 74, quantity: 1, colorID: 1 },
-                { partID: 76, quantity: 5, colorID: 1 },
-                { partID: 78, quantity: 10, colorID: 1 },
-                { partID: 79, quantity: 1, colorID: 1 },
-                { partID: 80, quantity: 1, colorID: 1 },
-            ],
+        parts: [
+            { partID: 73, quantity: 6, colorID: 1 },
+            { partID: 74, quantity: 1, colorID: 1 },
+            { partID: 76, quantity: 5, colorID: 1 },
+            { partID: 78, quantity: 10, colorID: 1 },
+            { partID: 79, quantity: 1, colorID: 1 },
+            { partID: 80, quantity: 1, colorID: 1 },
+        ],
     },
     12: {
-        parts:
-            [
-                { partID: 73, quantity: 6, colorID: 1 },
-                { partID: 75, quantity: 1, colorID: 1 },
-                { partID: 76, quantity: 8, colorID: 1 },
-                { partID: 78, quantity: 16, colorID: 1 },
-                { partID: 79, quantity: 2, colorID: 1 },
-                { partID: 80, quantity: 2, colorID: 1 },
-            ],
+        parts: [
+            { partID: 73, quantity: 6, colorID: 1 },
+            { partID: 75, quantity: 1, colorID: 1 },
+            { partID: 76, quantity: 8, colorID: 1 },
+            { partID: 78, quantity: 16, colorID: 1 },
+            { partID: 79, quantity: 2, colorID: 1 },
+            { partID: 80, quantity: 2, colorID: 1 },
+        ],
     },
     13: {
-        parts:
-            [
-                { partID: 1, quantity: 1, colorID: 1 },
-                { partID: 3, quantity: 2, colorID: 1 },
-                { partID: 5, quantity: 1, colorID: 1 },
-                { partID: 6, quantity: 1, colorID: 1 },
-                { partID: 7, quantity: 10, colorID: 1 },
-                { partID: 8, quantity: 20, colorID: 1 },
-                { partID: 9, quantity: 2, colorID: 1 },
-                { partID: 10, quantity: 2, colorID: 1 },
-                { partID: 11, quantity: 4, colorID: 1 },
-            ],
+        parts: [
+            { partID: 1, quantity: 1, colorID: 1 },
+            { partID: 3, quantity: 2, colorID: 1 },
+            { partID: 5, quantity: 1, colorID: 1 },
+            { partID: 6, quantity: 1, colorID: 1 },
+            { partID: 7, quantity: 10, colorID: 1 },
+            { partID: 8, quantity: 20, colorID: 1 },
+            { partID: 9, quantity: 2, colorID: 1 },
+            { partID: 10, quantity: 2, colorID: 1 },
+            { partID: 11, quantity: 4, colorID: 1 },
+        ],
     },
     14: {
-        parts:
-            [
-                { partID: 1, quantity: 1, colorID: 2 },
-                { partID: 3, quantity: 2, colorID: 2 },
-                { partID: 5, quantity: 1, colorID: 2 },
-                { partID: 6, quantity: 1, colorID: 2 },
-                { partID: 7, quantity: 10, colorID: 2 },
-                { partID: 8, quantity: 20, colorID: 2 },
-                { partID: 9, quantity: 2, colorID: 2 },
-                { partID: 10, quantity: 2, colorID: 2 },
-                { partID: 11, quantity: 4, colorID: 2 },
-            ],
+        parts: [
+            { partID: 1, quantity: 1, colorID: 2 },
+            { partID: 3, quantity: 2, colorID: 2 },
+            { partID: 5, quantity: 1, colorID: 2 },
+            { partID: 6, quantity: 1, colorID: 2 },
+            { partID: 7, quantity: 10, colorID: 2 },
+            { partID: 8, quantity: 20, colorID: 2 },
+            { partID: 9, quantity: 2, colorID: 2 },
+            { partID: 10, quantity: 2, colorID: 2 },
+            { partID: 11, quantity: 4, colorID: 2 },
+        ],
     },
     15: {
-        parts:
-            [
-                { partID: 15, quantity: 1, colorID: 2 },
-                { partID: 8, quantity: 2, colorID: 2 },
-            ],
+        parts: [
+            { partID: 15, quantity: 1, colorID: 2 },
+            { partID: 8, quantity: 2, colorID: 2 },
+        ],
     },
     16: {
-        parts:
-            [
-                { partID: 47, quantity: 6, colorID: 2 },
-                { partID: 48, quantity: 1, colorID: 2 },
-                { partID: 50, quantity: 1, colorID: 2 },
-                { partID: 51, quantity: 4, colorID: 2 },
-                { partID: 43, quantity: 8, colorID: 2 },
-                { partID: 52, quantity: 1, colorID: 2 },
-                { partID: 53, quantity: 1, colorID: 2 },
-            ],
+        parts: [
+            { partID: 47, quantity: 6, colorID: 2 },
+            { partID: 48, quantity: 1, colorID: 2 },
+            { partID: 50, quantity: 1, colorID: 2 },
+            { partID: 51, quantity: 4, colorID: 2 },
+            { partID: 43, quantity: 8, colorID: 2 },
+            { partID: 52, quantity: 1, colorID: 2 },
+            { partID: 53, quantity: 1, colorID: 2 },
+        ],
     },
     17: {
-        parts:
-            [
-                { partID: 46, quantity: 1, colorID: 2 },
-                { partID: 47, quantity: 4, colorID: 2 },
-                { partID: 49, quantity: 1, colorID: 2 },
-                { partID: 50, quantity: 1, colorID: 2 },
-                { partID: 51, quantity: 6, colorID: 2 },
-                { partID: 43, quantity: 12, colorID: 2 },
-                { partID: 52, quantity: 2, colorID: 2 },
-                { partID: 53, quantity: 2, colorID: 2 },
-            ],
+        parts: [
+            { partID: 46, quantity: 1, colorID: 2 },
+            { partID: 47, quantity: 4, colorID: 2 },
+            { partID: 49, quantity: 1, colorID: 2 },
+            { partID: 50, quantity: 1, colorID: 2 },
+            { partID: 51, quantity: 6, colorID: 2 },
+            { partID: 43, quantity: 12, colorID: 2 },
+            { partID: 52, quantity: 2, colorID: 2 },
+            { partID: 53, quantity: 2, colorID: 2 },
+        ],
     },
     18: {
-        parts:
-            [
-                { partID: 37, quantity: 1, colorID: 2 },
-                { partID: 38, quantity: 4, colorID: 2 },
-                { partID: 39, quantity: 2, colorID: 2 },
-                { partID: 40, quantity: 1, colorID: 2 },
-                { partID: 42, quantity: 4, colorID: 2 },
-                { partID: 43, quantity: 8, colorID: 2 },
-                { partID: 44, quantity: 1, colorID: 2 },
-                { partID: 45, quantity: 1, colorID: 2 },
-            ],
+        parts: [
+            { partID: 37, quantity: 1, colorID: 2 },
+            { partID: 38, quantity: 4, colorID: 2 },
+            { partID: 39, quantity: 2, colorID: 2 },
+            { partID: 40, quantity: 1, colorID: 2 },
+            { partID: 42, quantity: 4, colorID: 2 },
+            { partID: 43, quantity: 8, colorID: 2 },
+            { partID: 44, quantity: 1, colorID: 2 },
+            { partID: 45, quantity: 1, colorID: 2 },
+        ],
     },
     19: {
-        parts:
-            [
-                { partID: 2, quantity: 1, colorID: 2 },
-                { partID: 4, quantity: 2, colorID: 2 },
-                { partID: 5, quantity: 1, colorID: 2 },
-                { partID: 6, quantity: 1, colorID: 2 },
-                { partID: 7, quantity: 8, colorID: 2 },
-                { partID: 8, quantity: 16, colorID: 2 },
-                { partID: 9, quantity: 2, colorID: 2 },
-                { partID: 10, quantity: 2, colorID: 2 },
-                { partID: 11, quantity: 4, colorID: 2 },
-            ],
+        parts: [
+            { partID: 2, quantity: 1, colorID: 2 },
+            { partID: 4, quantity: 2, colorID: 2 },
+            { partID: 5, quantity: 1, colorID: 2 },
+            { partID: 6, quantity: 1, colorID: 2 },
+            { partID: 7, quantity: 8, colorID: 2 },
+            { partID: 8, quantity: 16, colorID: 2 },
+            { partID: 9, quantity: 2, colorID: 2 },
+            { partID: 10, quantity: 2, colorID: 2 },
+            { partID: 11, quantity: 4, colorID: 2 },
+        ],
     },
     20: {
         parts: [
@@ -395,22 +376,20 @@ const rackCompositions = {
         ],
     },
     22: {
-        parts:
-            [
-                { partID: 71, quantity: 1, colorID: 3 },
-                { partID: 72, quantity: 2, colorID: 2 },
-                { partID: 60, quantity: 1, colorID: 2 },
-                { partID: 61, quantity: 1, colorID: 2 },
-                { partID: 62, quantity: 4, colorID: 3 },
-                { partID: 63, quantity: 1, colorID: 3 },
-                { partID: 64, quantity: 10, colorID: 2 },
-                { partID: 65, quantity: 5, colorID: 2 },
-                { partID: 69, quantity: 15, colorID: 2 },
-                { partID: 70, quantity: 15, colorID: 2 },
-            ],
+        parts: [
+            { partID: 71, quantity: 1, colorID: 3 },
+            { partID: 72, quantity: 2, colorID: 2 },
+            { partID: 60, quantity: 1, colorID: 2 },
+            { partID: 61, quantity: 1, colorID: 2 },
+            { partID: 62, quantity: 4, colorID: 3 },
+            { partID: 63, quantity: 1, colorID: 3 },
+            { partID: 64, quantity: 10, colorID: 2 },
+            { partID: 65, quantity: 5, colorID: 2 },
+            { partID: 69, quantity: 15, colorID: 2 },
+            { partID: 70, quantity: 15, colorID: 2 },
+        ],
     },
-
-}
+};
 
 // DOM elements
 const rackCodeSelect = document.getElementById("rack-code");
@@ -431,12 +410,17 @@ function populateRackCodeOptions() {
 
 // Function to display all rack types in a table with quantity input fields
 function displayRackTypesTable() {
-    const selectedRackCode = rackCodeSelect.options[rackCodeSelect.selectedIndex].text;
-    const availableRackTypes = Object.keys(rack).filter((id) => rack[id].code === selectedRackCode).map(Number);
+    const selectedRackCode =
+        rackCodeSelect.options[rackCodeSelect.selectedIndex].text;
+    const availableRackTypes = Object.keys(rack)
+        .filter((id) => rack[id].code === selectedRackCode)
+        .map(Number);
 
     // clear the table if no rack types are available
     if (availableRackTypes.length === 0) {
-        const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+        const rackTypeTableContainer = document.getElementById(
+            "rack-type-table-container",
+        );
         rackTypeTableContainer.innerHTML = "";
         return;
     }
@@ -445,7 +429,8 @@ function displayRackTypesTable() {
         <table class="w-full border-collapse border border-gray-300 text-lg mt-4">
             <tbody>
             ${availableRackTypes
-            .map((id) => `
+                .map(
+                    (id) => `
                         <tr>
                             <td class="border border-gray-300 px-4 py-1">${rack[id].name}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">
@@ -458,25 +443,32 @@ function displayRackTypesTable() {
                                 />
                             </td>
                         </tr>
-                    `
-            )
-            .join("")}
+                    `,
+                )
+                .join("")}
             </tbody>
         </table>
     `;
 
-    const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+    const rackTypeTableContainer = document.getElementById(
+        "rack-type-table-container",
+    );
     rackTypeTableContainer.innerHTML = rackTypesTableHTML;
 }
 
 // Function to generate a table with parts based on entered quantities
 function generatePartsTable() {
-    const rackTypeTableContainer = document.getElementById("rack-type-table-container");
+    const rackTypeTableContainer = document.getElementById(
+        "rack-type-table-container",
+    );
     const rows = Array.from(rackTypeTableContainer.querySelectorAll("tr"));
     const tableData = [];
 
     rows.forEach((row) => {
-        const rackID = parseInt(row.querySelector("input").id.replace("quantity-", ""), 10);
+        const rackID = parseInt(
+            row.querySelector("input").id.replace("quantity-", ""),
+            10,
+        );
         const quantityInput = row.querySelector("input");
         const quantity = parseInt(quantityInput.value, 10);
 
@@ -490,7 +482,10 @@ function generatePartsTable() {
         composition.parts.forEach((part) => {
             const partDetails = rackParts[part.partID];
             const color = colors[part.colorID];
-            const existingPart = tableData.find((item) => item.name === partDetails.name && item.color === color);
+            const existingPart = tableData.find(
+                (item) =>
+                    item.name === partDetails.name && item.color === color,
+            );
 
             if (existingPart) {
                 // If part already exists, update its quantity
@@ -511,6 +506,7 @@ function generatePartsTable() {
         return;
     }
 
+    // Store the current table data for later reference
     const tableHTML = `
         <table class="w-full border-collapse border border-gray-300 text-lg mt-4">
             <thead>
@@ -523,21 +519,104 @@ function generatePartsTable() {
             </thead>
             <tbody>
                 ${tableData
-            .map(
-                (part) => `
-                        <tr>
+                    .map(
+                        (part, index) => `
+                        <tr data-index="${index}">
                             <td class="border border-gray-300 px-4 py-1">${part.name}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">${part.color}</td>
-                            <td class="border border-gray-300 px-4 py-1 text-center">${part.quantity}</td>
+                            <td class="border border-gray-300 px-4 py-1 text-center">
+                                <input 
+                                    type="number" 
+                                    min="1" 
+                                    value="${part.quantity}" 
+                                    class="w-20 text-center border border-gray-300 rounded"
+                                    data-part-name="${part.name}"
+                                    data-color="${part.color}"
+                                />
+                            </td>
                             <td class="border border-gray-300 px-4 py-1 text-center"></td>
-                        </tr>`
-            )
-            .join("")}
+                        </tr>`,
+                    )
+                    .join("")}
             </tbody>
         </table>
     `;
 
     tableContainer.innerHTML = tableHTML;
+
+    // Add event listeners to quantity inputs
+    const quantityInputs = tableContainer.querySelectorAll(
+        'input[type="number"]',
+    );
+    quantityInputs.forEach((input) => {
+        input.addEventListener("change", (e) => {
+            const newQuantity = parseInt(e.target.value, 10);
+            if (isNaN(newQuantity) || newQuantity < 1) {
+                e.target.value = 1; // Reset to minimum value if invalid
+                return;
+            }
+
+            // Find the row and update the quantity in the tableData
+            const row = e.target.closest("tr");
+            const index = parseInt(row.dataset.index, 10);
+            if (!isNaN(index) && tableData[index]) {
+                tableData[index].quantity = newQuantity;
+            }
+
+            // Update the table with new quantities
+            updatePartsTable(tableContainer, tableData);
+        });
+    });
+
+    // Store the table data for later reference
+    tableContainer.dataset.tableData = JSON.stringify(tableData);
+
+    tableContainer.innerHTML = tableHTML;
+}
+
+// Function to update the parts table with new quantities
+function updatePartsTable(container, data) {
+    const tbody = container.querySelector("tbody");
+    tbody.innerHTML = data
+        .map(
+            (part, index) => `
+            <tr data-index="${index}">
+                <td class="border border-gray-300 px-4 py-1">${part.name}</td>
+                <td class="border border-gray-300 px-4 py-1 text-center">${part.color}</td>
+                <td class="border border-gray-300 px-4 py-1 text-center">
+                    <input 
+                        type="number" 
+                        min="1" 
+                        value="${part.quantity}" 
+                        class="w-20 text-center border border-gray-300 rounded"
+                        data-part-name="${part.name}"
+                        data-color="${part.color}"
+                    />
+                </td>
+                <td class="border border-gray-300 px-4 py-1 text-center"></td>
+            </tr>`,
+        )
+        .join("");
+
+    // Re-attach event listeners
+    const quantityInputs = tbody.querySelectorAll('input[type="number"]');
+    quantityInputs.forEach((input) => {
+        input.addEventListener("change", (e) => {
+            const newQuantity = parseInt(e.target.value, 10);
+            if (isNaN(newQuantity) || newQuantity < 1) {
+                e.target.value = 1;
+                return;
+            }
+
+            const row = e.target.closest("tr");
+            const index = parseInt(row.dataset.index, 10);
+            if (!isNaN(index) && data[index]) {
+                data[index].quantity = newQuantity;
+            }
+
+            updatePartsTable(container, data);
+        });
+    });
 }
 
 // Event Listeners
