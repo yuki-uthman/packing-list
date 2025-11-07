@@ -116,12 +116,12 @@ const rack = {
     13: { code: "2C", name: "DOUBLE SIDE 6.5ft WHITE" },
     14: { code: "2C", name: "DOUBLE SIDE 6.5ft BLACK" },
     15: { code: "2C", name: "EXTRA SHELF SMALL BLACK" },
-    16: { code: "RD8A", name: "SINGLE SIDE 6ft" },
-    17: { code: "RD8A", name: "DOUBLE SIDE 6ft" },
+    16: { code: "RD8A", name: "SINGLE SIDE 6.5ft" },
+    17: { code: "RD8A", name: "DOUBLE SIDE 6.5ft" },
     18: { code: "RD8A", name: "END RACK 5ft" },
     19: { code: "2C", name: "DOUBLE SIDE 6ft BLACK" },
-    20: { code: "RD8", name: "SINGLE SIDE 6ft" },
-    21: { code: "RD8", name: "DOUBLE SIDE 6ft" },
+    20: { code: "RD8", name: "SINGLE SIDE 6.5ft" },
+    21: { code: "RD8", name: "DOUBLE SIDE 6.5ft" },
     22: { code: "37", name: "SINGLE RACK 7.5ft" },
 };
 
