@@ -497,8 +497,8 @@ function generatePartsTable() {
                 <tr class="bg-gray-200">
                     <th class="border border-gray-300 px-4 py-1 text-left">Part Name</th>
                     <th class="border border-gray-300 px-4 py-1 text-center">Color</th>
-                    <th class="border border-gray-300 px-4 py-1 text-center">PCS</th>
-                    <th class="border border-gray-300 px-4 py-1 text-center">Staff</th>
+                    <th class="border border-gray-300 px-4 py-1 text-center">Qty</th>
+                    <th class="border border-gray-300 px-4 py-1 text-center">Box</th>
                 </tr>
             </thead>
             <tbody>
