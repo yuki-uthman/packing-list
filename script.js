@@ -5,6 +5,7 @@ const rackCode = {
     3: "RD8",
     4: "17",
     5: "37",
+    5: "RD8F",
 };
 
 const rackParts = {
@@ -100,6 +101,26 @@ const rackParts = {
     81: { code: "17", name: "BRACKET FRONT" },
 
     82: { code: "RD8A", name: "STAND DOUBLE SIDE 5ft" },
+
+    // Flat Backplates
+    83: { code: "RD8F", name: "STAND SINGLE SIDE 6.5ft" },
+    84: { code: "RD8F", name: "STAND DOUBLE SIDE 6.5ft" },
+    85: { code: "RD8F", name: "STAND SINGLE SIDE 5ft" },
+    86: { code: "RD8F", name: "STAND DOUBLE SIDE 5ft" },
+    87: { code: "RD8F", name: "BACKPLATE 900x340x220mm" },
+    88: { code: "RD8F", name: "BACKPLATE 900x340x320mm" },
+    89: { code: "RD8F", name: "FATHI TOP 900mm" },
+    90: { code: "RD8F", name: "SHELF TOP 900mm" },
+    91: { code: "RD8F", name: "SHELF BOTTOM 900mm" },
+    92: { code: "RD8F", name: "BRACKET FRONT 900mm" },
+    93: { code: "RD8F", name: "CLIP" },
+    94: { code: "RD8F", name: "BACKPLATE 700x340x220mm" },
+    95: { code: "RD8F", name: "BACKPLATE 700x340x320mm" },
+    96: { code: "RD8F", name: "FATHI TOP 700mm" },
+    97: { code: "RD8F", name: "FATHI BOTTOM 700mm" },
+    98: { code: "RD8F", name: "SHELF TOP 700mm" },
+    99: { code: "RD8F", name: "SHELF BOTTOM 700mm" },
+    100: { code: "RD8F", name: "BRACKET FRONT 700mm" },
 };
 
 const rack = {
@@ -124,6 +145,11 @@ const rack = {
     21: { code: "RD8", name: "DOUBLE SIDE 6.5ft" },
     22: { code: "37", name: "SINGLE RACK 7.5ft" },
     23: { code: "RD8A", name: "DOUBLE SIDE 5ft" },
+    24: { code: "RD8F", name: "SINGLE 6.5ft (Flat Board)" },
+    25: { code: "RD8F", name: "DOUBLE 6.5ft (Flat Board)" },
+    26: { code: "RD8F", name: "END RACK 6.5ft (Flat Board)" },
+    27: { code: "RD8F", name: "DOUBLE 5ft (Flat Board)" },
+    28: { code: "RD8F", name: "END RACK 5ft (Flat Board)" },
 };
 
 const colors = {
@@ -387,6 +413,63 @@ const rackCompositions = {
             { partID: 43, quantity: 12, colorID: 4 },
             { partID: 52, quantity: 2, colorID: 4 },
             { partID: 53, quantity: 2, colorID: 4 },
+        ],
+    },
+    24: {
+        parts: [
+            { partID: 88, quantity: 6, colorID: 1 },
+            { partID: 83, quantity: 2, colorID: 1 },
+            { partID: 89, quantity: 1, colorID: 1 },
+            { partID: 90, quantity: 5, colorID: 1 },
+            { partID: 93, quantity: 10, colorID: 1 },
+            { partID: 91, quantity: 1, colorID: 1 },
+            { partID: 92, quantity: 1, colorID: 1 },
+        ],
+    },
+    25: {
+        parts: [
+            { partID: 88, quantity: 6, colorID: 1 },
+            { partID: 84, quantity: 2, colorID: 1 },
+            { partID: 89, quantity: 1, colorID: 1 },
+            { partID: 90, quantity: 8, colorID: 1 },
+            { partID: 93, quantity: 16, colorID: 1 },
+            { partID: 91, quantity: 2, colorID: 1 },
+            { partID: 92, quantity: 2, colorID: 1 },
+        ],
+    },
+    26: {
+        parts: [
+            { partID: 95, quantity: 6, colorID: 1 },
+            { partID: 83, quantity: 2, colorID: 1 },
+            { partID: 96, quantity: 1, colorID: 1 },
+            { partID: 97, quantity: 5, colorID: 1 },
+            { partID: 93, quantity: 10, colorID: 1 },
+            { partID: 98, quantity: 1, colorID: 1 },
+            { partID: 99, quantity: 1, colorID: 1 },
+        ],
+    },
+    27: {
+        parts: [
+            { partID: 87, quantity: 1, colorID: 1 },
+            { partID: 88, quantity: 4, colorID: 1 },
+            { partID: 86, quantity: 2, colorID: 1 },
+            { partID: 89, quantity: 1, colorID: 1 },
+            { partID: 90, quantity: 6, colorID: 1 },
+            { partID: 93, quantity: 12, colorID: 1 },
+            { partID: 91, quantity: 2, colorID: 1 },
+            { partID: 92, quantity: 2, colorID: 1 },
+        ],
+    },
+    28: {
+        parts: [
+            { partID: 94, quantity: 1, colorID: 1 },
+            { partID: 95, quantity: 4, colorID: 1 },
+            { partID: 85, quantity: 2, colorID: 1 },
+            { partID: 96, quantity: 1, colorID: 1 },
+            { partID: 97, quantity: 3, colorID: 1 },
+            { partID: 93, quantity: 6, colorID: 1 },
+            { partID: 98, quantity: 1, colorID: 1 },
+            { partID: 99, quantity: 1, colorID: 1 },
         ],
     },
 };
