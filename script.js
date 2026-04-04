@@ -512,8 +512,8 @@ function displayRackTypesTable() {
         <table class="w-full border-collapse border border-gray-300 text-lg mt-4">
             <tbody>
             ${availableRackTypes
-                .map(
-                    (id) => `
+            .map(
+                (id) => `
                         <tr>
                             <td class="border border-gray-300 px-4 py-1">${rack[id].name}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">
@@ -527,8 +527,8 @@ function displayRackTypesTable() {
                             </td>
                         </tr>
                     `,
-                )
-                .join("")}
+            )
+            .join("")}
             </tbody>
         </table>
     `;
@@ -602,8 +602,8 @@ function generatePartsTable() {
             </thead>
             <tbody>
                 ${tableData
-                    .map(
-                        (part, index) => `
+            .map(
+                (part, index) => `
                         <tr data-index="${index}">
                             <td class="border border-gray-300 px-4 py-1">${part.name}</td>
                             <td class="border border-gray-300 px-4 py-1 text-center">${part.color}</td>
@@ -619,8 +619,8 @@ function generatePartsTable() {
                             </td>
                             <td class="border border-gray-300 px-4 py-1 text-center"></td>
                         </tr>`,
-                    )
-                    .join("")}
+            )
+            .join("")}
             </tbody>
         </table>
     `;
