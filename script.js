@@ -30,8 +30,8 @@ const rackParts = {
     19: { code: "2C", name: "STAND 1500mm" },
 
     // RD8 parts (IDs 20-31)
-    20: { code: "RD8", name: "BACK PLATE SMALL (END RACK)" },
-    21: { code: "RD8", name: "BACK PLATE BIG (END RACK)" },
+    20: { code: "RD8", name: "BACKPLATE 700x340x220mm" },
+    21: { code: "RD8", name: "BACKPLATE 700x340x320mm" },
     22: { code: "RD8", name: "STAND (END RACK)" },
     23: { code: "RD8", name: "FATHI TOP (END RACK)" },
     24: { code: "RD8", name: "FATHI BOTTOM (END RACK)" },
@@ -39,8 +39,8 @@ const rackParts = {
     26: { code: "RD8", name: "CLIP" },
     27: { code: "RD8", name: "SHELF BOTTOM (END RACK)" },
     28: { code: "RD8", name: "BRACKET FRONT (END RACK)" },
-    29: { code: "RD8", name: "BACK PLATE SMALL" },
-    30: { code: "RD8", name: "BACK PLATE BIG" },
+    29: { code: "RD8", name: "BACKPLATE 900x340x220mm" },
+    30: { code: "RD8", name: "BACKPLATE 900x340x320mm" },
     31: { code: "RD8", name: "STAND SINGLE SIDE" },
     32: { code: "RD8", name: "STAND DOUBLE SIDE" },
     33: { code: "RD8", name: "FATHI TOP" },
@@ -49,8 +49,8 @@ const rackParts = {
     36: { code: "RD8", name: "BRACKET FRONT" },
 
     // RD8A parts (IDs 37-50)
-    37: { code: "RD8A", name: "BACK PLATE SMALL (END RACK)" },
-    38: { code: "RD8A", name: "BACK PLATE BIG (END RACK)" },
+    37: { code: "RD8A", name: "BACKPLATE 700x340x220mm" },
+    38: { code: "RD8A", name: "BACKPLATE 700x340x320mm" },
     39: { code: "RD8A", name: "STAND (END RACK)" },
     40: { code: "RD8A", name: "FATHI TOP (END RACK)" },
     41: { code: "RD8A", name: "FATHI BOTTOM (END RACK)" },
@@ -58,8 +58,8 @@ const rackParts = {
     43: { code: "RD8A", name: "CLIP" },
     44: { code: "RD8A", name: "SHELF BOTTOM (END RACK)" },
     45: { code: "RD8A", name: "BRACKET FRONT (END RACK)" },
-    46: { code: "RD8A", name: "BACK PLATE 200mm SMALL" },
-    47: { code: "RD8A", name: "BACK PLATE 300mm BIG" },
+    46: { code: "RD8A", name: "BACKPLATE 900x340x220mm" },
+    47: { code: "RD8A", name: "BACKPLATE 900x340x320mm" },
     48: { code: "RD8A", name: "STAND SINGLE SIDE 6.5ft" },
     49: { code: "RD8A", name: "STAND DOUBLE SIDE 6.5ft" },
     50: { code: "RD8A", name: "FATHI TOP" },
