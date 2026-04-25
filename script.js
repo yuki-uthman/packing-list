@@ -5,7 +5,7 @@ const rackCode = {
     3: "RD8",
     4: "17",
     5: "37",
-    5: "RD8F",
+    6: "RD8F",
 };
 
 const rackParts = {
