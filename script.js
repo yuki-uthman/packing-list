@@ -466,10 +466,10 @@ const rackCompositions = {
             { partID: 95, quantity: 4, colorID: 1 },
             { partID: 85, quantity: 2, colorID: 1 },
             { partID: 96, quantity: 1, colorID: 1 },
-            { partID: 97, quantity: 3, colorID: 1 },
+            { partID: 98, quantity: 3, colorID: 1 },
             { partID: 93, quantity: 6, colorID: 1 },
-            { partID: 98, quantity: 1, colorID: 1 },
             { partID: 99, quantity: 1, colorID: 1 },
+            { partID: 100, quantity: 1, colorID: 1 },
         ],
     },
 };
